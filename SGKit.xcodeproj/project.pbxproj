@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		9C5BEA8F1DCDEFCF00385153 /* SGKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C5BEA8D1DCDEFCF00385153 /* SGKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C5BEAD01DCDF0ED00385153 /* SGCollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C5BEACE1DCDF0ED00385153 /* SGCollectionViewFlowLayout.h */; };
+		9C5BEAD11DCDF0ED00385153 /* SGCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BEACF1DCDF0ED00385153 /* SGCollectionViewFlowLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9C5BEA8A1DCDEFCF00385153 /* SGKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SGKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C5BEA8D1DCDEFCF00385153 /* SGKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGKit.h; sourceTree = "<group>"; };
 		9C5BEA8E1DCDEFCF00385153 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C5BEACE1DCDF0ED00385153 /* SGCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		9C5BEACF1DCDF0ED00385153 /* SGCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 		9C5BEACD1DCDF07600385153 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				9C5BEACE1DCDF0ED00385153 /* SGCollectionViewFlowLayout.h */,
+				9C5BEACF1DCDF0ED00385153 /* SGCollectionViewFlowLayout.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -68,6 +74,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C5BEA8F1DCDEFCF00385153 /* SGKit.h in Headers */,
+				9C5BEAD01DCDF0ED00385153 /* SGCollectionViewFlowLayout.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C5BEAD11DCDF0ED00385153 /* SGCollectionViewFlowLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
