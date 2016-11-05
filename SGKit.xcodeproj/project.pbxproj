@@ -10,6 +10,10 @@
 		9C5BEA8F1DCDEFCF00385153 /* SGKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C5BEA8D1DCDEFCF00385153 /* SGKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9C5BEAD01DCDF0ED00385153 /* SGCollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C5BEACE1DCDF0ED00385153 /* SGCollectionViewFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9C5BEAD11DCDF0ED00385153 /* SGCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BEACF1DCDF0ED00385153 /* SGCollectionViewFlowLayout.m */; };
+		9CFA1F0E1DCDFB2D001D1A5A /* SGCollectionReusableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CFA1F0C1DCDFB2D001D1A5A /* SGCollectionReusableView.h */; };
+		9CFA1F0F1DCDFB2D001D1A5A /* SGCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CFA1F0D1DCDFB2D001D1A5A /* SGCollectionReusableView.m */; };
+		9CFA1F121DCDFB58001D1A5A /* SGCollectionViewLayoutAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CFA1F101DCDFB58001D1A5A /* SGCollectionViewLayoutAttributes.h */; };
+		9CFA1F131DCDFB58001D1A5A /* SGCollectionViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CFA1F111DCDFB58001D1A5A /* SGCollectionViewLayoutAttributes.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +22,10 @@
 		9C5BEA8E1DCDEFCF00385153 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C5BEACE1DCDF0ED00385153 /* SGCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		9C5BEACF1DCDF0ED00385153 /* SGCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		9CFA1F0C1DCDFB2D001D1A5A /* SGCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCollectionReusableView.h; sourceTree = "<group>"; };
+		9CFA1F0D1DCDFB2D001D1A5A /* SGCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGCollectionReusableView.m; sourceTree = "<group>"; };
+		9CFA1F101DCDFB58001D1A5A /* SGCollectionViewLayoutAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCollectionViewLayoutAttributes.h; sourceTree = "<group>"; };
+		9CFA1F111DCDFB58001D1A5A /* SGCollectionViewLayoutAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGCollectionViewLayoutAttributes.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,10 @@
 			children = (
 				9C5BEACE1DCDF0ED00385153 /* SGCollectionViewFlowLayout.h */,
 				9C5BEACF1DCDF0ED00385153 /* SGCollectionViewFlowLayout.m */,
+				9CFA1F0C1DCDFB2D001D1A5A /* SGCollectionReusableView.h */,
+				9CFA1F0D1DCDFB2D001D1A5A /* SGCollectionReusableView.m */,
+				9CFA1F101DCDFB58001D1A5A /* SGCollectionViewLayoutAttributes.h */,
+				9CFA1F111DCDFB58001D1A5A /* SGCollectionViewLayoutAttributes.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -75,6 +87,8 @@
 			files = (
 				9C5BEA8F1DCDEFCF00385153 /* SGKit.h in Headers */,
 				9C5BEAD01DCDF0ED00385153 /* SGCollectionViewFlowLayout.h in Headers */,
+				9CFA1F121DCDFB58001D1A5A /* SGCollectionViewLayoutAttributes.h in Headers */,
+				9CFA1F0E1DCDFB2D001D1A5A /* SGCollectionReusableView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +162,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C5BEAD11DCDF0ED00385153 /* SGCollectionViewFlowLayout.m in Sources */,
+				9CFA1F0F1DCDFB2D001D1A5A /* SGCollectionReusableView.m in Sources */,
+				9CFA1F131DCDFB58001D1A5A /* SGCollectionViewLayoutAttributes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

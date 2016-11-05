@@ -7,6 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class SGCollectionViewFlowLayout;
+
+@protocol SGCollectionViewDelegateFlowLayout <UICollectionViewDelegateFlowLayout>
+
+- (UIColor *)collectionView:(UICollectionView *)collectionView layout:(SGCollectionViewFlowLayout *)collectionViewLayout backgroundColorForSectionAtIndex:(NSInteger)section;
+
+@end
 
 @interface SGCollectionViewFlowLayout : UICollectionViewFlowLayout
 
