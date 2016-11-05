@@ -15,5 +15,5 @@ FOUNDATION_EXPORT double SGKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char SGKitVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <SGKit/PublicHeader.h>
-
+#import <SGKit/SGCollectionViewFlowLayout.h>
 

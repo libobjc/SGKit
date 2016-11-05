@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9C5BEA8F1DCDEFCF00385153 /* SGKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C5BEA8D1DCDEFCF00385153 /* SGKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9C5BEAD01DCDF0ED00385153 /* SGCollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C5BEACE1DCDF0ED00385153 /* SGCollectionViewFlowLayout.h */; };
+		9C5BEAD01DCDF0ED00385153 /* SGCollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C5BEACE1DCDF0ED00385153 /* SGCollectionViewFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9C5BEAD11DCDF0ED00385153 /* SGCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BEACF1DCDF0ED00385153 /* SGCollectionViewFlowLayout.m */; };
 /* End PBXBuildFile section */
 
