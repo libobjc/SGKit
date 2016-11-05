@@ -14,6 +14,8 @@
 		9CDD5F4A1DCE30B200AB7057 /* SGCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDD5F441DCE30B200AB7057 /* SGCollectionViewFlowLayout.m */; };
 		9CDD5F4B1DCE30B200AB7057 /* SGCollectionViewLayoutAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CDD5F451DCE30B200AB7057 /* SGCollectionViewLayoutAttributes.h */; };
 		9CDD5F4C1DCE30B200AB7057 /* SGCollectionViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDD5F461DCE30B200AB7057 /* SGCollectionViewLayoutAttributes.m */; };
+		9CDD5F501DCE37ED00AB7057 /* UIColor+Extsion.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CDD5F4E1DCE37ED00AB7057 /* UIColor+Extsion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9CDD5F511DCE37ED00AB7057 /* UIColor+Extsion.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDD5F4F1DCE37ED00AB7057 /* UIColor+Extsion.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		9CDD5F441DCE30B200AB7057 /* SGCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		9CDD5F451DCE30B200AB7057 /* SGCollectionViewLayoutAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCollectionViewLayoutAttributes.h; sourceTree = "<group>"; };
 		9CDD5F461DCE30B200AB7057 /* SGCollectionViewLayoutAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGCollectionViewLayoutAttributes.m; sourceTree = "<group>"; };
+		9CDD5F4E1DCE37ED00AB7057 /* UIColor+Extsion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extsion.h"; sourceTree = "<group>"; };
+		9CDD5F4F1DCE37ED00AB7057 /* UIColor+Extsion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extsion.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 		9C5BEACD1DCDF07600385153 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				9CDD5F4D1DCE37D500AB7057 /* SGCategory */,
 				9CDD5F401DCE30B200AB7057 /* SGCollectionView */,
 			);
 			path = Core;
@@ -86,6 +91,15 @@
 			path = SGCollectionView;
 			sourceTree = "<group>";
 		};
+		9CDD5F4D1DCE37D500AB7057 /* SGCategory */ = {
+			isa = PBXGroup;
+			children = (
+				9CDD5F4E1DCE37ED00AB7057 /* UIColor+Extsion.h */,
+				9CDD5F4F1DCE37ED00AB7057 /* UIColor+Extsion.m */,
+			);
+			path = SGCategory;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -95,6 +109,7 @@
 			files = (
 				9C5BEA8F1DCDEFCF00385153 /* SGKit.h in Headers */,
 				9CDD5F471DCE30B200AB7057 /* SGCollectionReusableView.h in Headers */,
+				9CDD5F501DCE37ED00AB7057 /* UIColor+Extsion.h in Headers */,
 				9CDD5F491DCE30B200AB7057 /* SGCollectionViewFlowLayout.h in Headers */,
 				9CDD5F4B1DCE30B200AB7057 /* SGCollectionViewLayoutAttributes.h in Headers */,
 			);
@@ -171,6 +186,7 @@
 			files = (
 				9CDD5F4A1DCE30B200AB7057 /* SGCollectionViewFlowLayout.m in Sources */,
 				9CDD5F481DCE30B200AB7057 /* SGCollectionReusableView.m in Sources */,
+				9CDD5F511DCE37ED00AB7057 /* UIColor+Extsion.m in Sources */,
 				9CDD5F4C1DCE30B200AB7057 /* SGCollectionViewLayoutAttributes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
