@@ -12,6 +12,12 @@
 
 static NSString * const DecorationReuseIdentifier = @"DecorationReuseIdentifier";
 
+@interface SGCollectionViewFlowLayout ()
+
+@property (nonatomic, strong) NSMutableArray <SGCollectionViewLayoutAttributes *> * decorationAttributesArray;
+
+@end
+
 @implementation SGCollectionViewFlowLayout
 
 + (Class)layoutAttributesClass
@@ -22,46 +28,65 @@ static NSString * const DecorationReuseIdentifier = @"DecorationReuseIdentifier"
 - (void)prepareLayout
 {
     [super prepareLayout];
+    
+    if (![self.collectionView.delegate respondsToSelector:@selector(collectionView:layout:backgroundColorForSectionAtIndex:)]) return;
+    
+    NSInteger sectionCount = [self.collectionView numberOfSections];
+    if (!sectionCount) return;
+    
     [self registerClass:[SGCollectionReusableView class] forDecorationViewOfKind:DecorationReuseIdentifier];
+    [self.decorationAttributesArray removeAllObjects];
+    for (NSInteger i = 0; i < sectionCount; i++)
+    {
+        NSInteger itemCount = [self.collectionView numberOfItemsInSection:i];
+        if (!itemCount) continue;
+        
+        UICollectionViewLayoutAttributes * first = [self layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:i]];
+        UICollectionViewLayoutAttributes * last = [self layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForItem:itemCount-1 inSection:i]];
+        
+        UIEdgeInsets sectionInset = self.sectionInset;
+        if ([self.collectionView.delegate respondsToSelector:@selector(collectionView:layout:insetForSectionAtIndex:)]) {
+            sectionInset = [(id <UICollectionViewDelegateFlowLayout>)self.collectionView.delegate collectionView:self.collectionView layout:self insetForSectionAtIndex:i];
+        }
+        
+        CGRect sectionFrame = CGRectUnion(first.frame, last.frame);
+        sectionFrame.origin.x -= sectionInset.left;
+        sectionFrame.origin.y -= sectionInset.top;
+        
+        if (self.scrollDirection == UICollectionViewScrollDirectionHorizontal) {
+            sectionFrame.size.width += sectionInset.left + sectionInset.right;
+            sectionFrame.size.height = self.collectionView.frame.size.height;
+        } else {
+            sectionFrame.size.width = self.collectionView.frame.size.width;
+            sectionFrame.size.height += sectionInset.top + sectionInset.bottom;
+        }
+        
+        SGCollectionViewLayoutAttributes * attributes = [SGCollectionViewLayoutAttributes layoutAttributesForDecorationViewOfKind:DecorationReuseIdentifier withIndexPath:[NSIndexPath indexPathForItem:0 inSection:i]];
+        attributes.frame = sectionFrame;
+        attributes.zIndex = -1;
+        attributes.color = [(id <SGCollectionViewDelegateFlowLayout>)self.collectionView.delegate collectionView:self.collectionView layout:self backgroundColorForSectionAtIndex:0];
+        [self.decorationAttributesArray addObject:attributes];
+    }
 }
 
 - (NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect
 {
     NSArray * attributes = [super layoutAttributesForElementsInRect:rect];
-    if (![self.collectionView.delegate respondsToSelector:@selector(collectionView:layout:backgroundColorForSectionAtIndex:)]) return attributes;
-    
     NSMutableArray * allAttributes = [NSMutableArray arrayWithArray:attributes];
-    for (UICollectionViewLayoutAttributes * attribute in attributes)
-    {
-        // Look for the first item in a row
-        if ([self.collectionView.delegate respondsToSelector:@selector(collectionView:layout:insetForSectionAtIndex:)])
-        {
-            self.sectionInset = [((id <UICollectionViewDelegateFlowLayout>) self.collectionView.delegate)
-                                 collectionView:self.collectionView layout:self insetForSectionAtIndex:attribute.indexPath.section];
-        }
-        if ([self.collectionView.delegate respondsToSelector:@selector(collectionView:layout:minimumLineSpacingForSectionAtIndex:)])
-        {
-            self.minimumLineSpacing = [((id <UICollectionViewDelegateFlowLayout>) self.collectionView.delegate) collectionView:self.collectionView layout:self minimumLineSpacingForSectionAtIndex:attribute.indexPath.section];
-        }
-        if ([self.collectionView.delegate respondsToSelector:@selector(collectionView:layout:sizeForItemAtIndexPath:)])
-        {
-            self.itemSize = [((id <UICollectionViewDelegateFlowLayout>) self.collectionView.delegate) collectionView:self.collectionView layout:self sizeForItemAtIndexPath:attribute.indexPath];
-        }
-        if (attribute.representedElementKind == UICollectionElementCategoryCell
-            && roundl(attribute.frame.origin.x) == roundl(self.sectionInset.left))
-        {
-            // Create decoration attributes
-            SGCollectionViewLayoutAttributes * decorationAttributes =
-            [SGCollectionViewLayoutAttributes layoutAttributesForDecorationViewOfKind:DecorationReuseIdentifier withIndexPath:attribute.indexPath];
-            decorationAttributes.frame = CGRectMake(0, attribute.frame.origin.y - (self.sectionInset.top),self.collectionViewContentSize.width, self.itemSize.height + (self.minimumLineSpacing + self.sectionInset.top + self.sectionInset.bottom));
-            
-            // Set the zIndex to be behind the item
-            decorationAttributes.zIndex = attribute.zIndex-1;
-            decorationAttributes.color = [(id <SGCollectionViewDelegateFlowLayout>)self.collectionView.delegate collectionView:self.collectionView layout:self backgroundColorForSectionAtIndex:attribute.indexPath.section];
-            [allAttributes addObject:decorationAttributes];
+    for (SGCollectionViewLayoutAttributes * obj in self.decorationAttributesArray) {
+        if (CGRectIntersectsRect(rect, obj.frame)) {
+            [allAttributes addObject:obj];
         }
     }
     return allAttributes;
+}
+
+- (NSMutableArray<SGCollectionViewLayoutAttributes *> *)decorationAttributesArray
+{
+    if (!_decorationAttributesArray) {
+        _decorationAttributesArray = [NSMutableArray array];
+    }
+    return _decorationAttributesArray;
 }
 
 @end
