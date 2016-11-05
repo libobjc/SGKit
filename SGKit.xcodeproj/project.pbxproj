@@ -10,7 +10,7 @@
 		9C5BEA8F1DCDEFCF00385153 /* SGKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C5BEA8D1DCDEFCF00385153 /* SGKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CDD5F471DCE30B200AB7057 /* SGCollectionReusableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CDD5F411DCE30B200AB7057 /* SGCollectionReusableView.h */; };
 		9CDD5F481DCE30B200AB7057 /* SGCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDD5F421DCE30B200AB7057 /* SGCollectionReusableView.m */; };
-		9CDD5F491DCE30B200AB7057 /* SGCollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CDD5F431DCE30B200AB7057 /* SGCollectionViewFlowLayout.h */; };
+		9CDD5F491DCE30B200AB7057 /* SGCollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CDD5F431DCE30B200AB7057 /* SGCollectionViewFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CDD5F4A1DCE30B200AB7057 /* SGCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDD5F441DCE30B200AB7057 /* SGCollectionViewFlowLayout.m */; };
 		9CDD5F4B1DCE30B200AB7057 /* SGCollectionViewLayoutAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CDD5F451DCE30B200AB7057 /* SGCollectionViewLayoutAttributes.h */; };
 		9CDD5F4C1DCE30B200AB7057 /* SGCollectionViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDD5F461DCE30B200AB7057 /* SGCollectionViewLayoutAttributes.m */; };
@@ -93,10 +93,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C5BEA8F1DCDEFCF00385153 /* SGKit.h in Headers */,
 				9CDD5F471DCE30B200AB7057 /* SGCollectionReusableView.h in Headers */,
 				9CDD5F491DCE30B200AB7057 /* SGCollectionViewFlowLayout.h in Headers */,
 				9CDD5F4B1DCE30B200AB7057 /* SGCollectionViewLayoutAttributes.h in Headers */,
-				9C5BEA8F1DCDEFCF00385153 /* SGKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
