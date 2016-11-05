@@ -48,8 +48,16 @@
 			children = (
 				9C5BEA8D1DCDEFCF00385153 /* SGKit.h */,
 				9C5BEA8E1DCDEFCF00385153 /* Info.plist */,
+				9C5BEACD1DCDF07600385153 /* Core */,
 			);
 			path = SGKit;
+			sourceTree = "<group>";
+		};
+		9C5BEACD1DCDF07600385153 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +297,7 @@
 				9C5BEA941DCDEFCF00385153 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
