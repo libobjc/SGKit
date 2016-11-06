@@ -16,5 +16,5 @@ FOUNDATION_EXPORT const unsigned char SGKitVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <SGKit/PublicHeader.h>
 #import <SGKit/SGCollectionViewFlowLayout.h>
-#import <SGKit/UIColor+Extsion.h>
+#import <SGKit/UIColor+SGExtension.h>
 
