@@ -18,4 +18,3 @@ FOUNDATION_EXPORT const unsigned char SGKitVersionString[];     // version strin
 #import <SGKit/UIColor+SGExtension.h>
 #import <SGKit/UIViewController+SGExtension.h>
 #import <SGKit/UIScreen+SGExtension.h>
-
