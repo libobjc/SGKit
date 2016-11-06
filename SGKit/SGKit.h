@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-//! Project version number for SGKit.
-FOUNDATION_EXPORT double SGKitVersionNumber;
+FOUNDATION_EXPORT double SGKitVersionNumber;    // version number
+FOUNDATION_EXPORT const unsigned char SGKitVersionString[];     // version string
 
-//! Project version string for SGKit.
-FOUNDATION_EXPORT const unsigned char SGKitVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <SGKit/PublicHeader.h>
+// class
 #import <SGKit/SGCollectionViewFlowLayout.h>
+
+// categroy
 #import <SGKit/UIColor+SGExtension.h>
+#import <SGKit/UIViewController+SGExtension.h>
 
