@@ -10,10 +10,10 @@
 
 @interface UIColor (SGExtension)
 
-+ (instancetype)sg_randomColor;
-+ (instancetype)sg_colorWithRGB:(NSInteger)RGB;
++ (instancetype)sg_randomColor; // 随机颜色
++ (instancetype)sg_colorWithRGB:(NSInteger)RGB; // 16进制RGB
 + (instancetype)sg_colorWithRGB:(NSInteger)RGB alpha:(CGFloat)alpha;
-+ (instancetype)sg_colorWithRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue;
++ (instancetype)sg_colorWithRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue; // 0~255
 + (instancetype)sg_colorWithRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue alpha:(CGFloat)alpha;
 
 @end
