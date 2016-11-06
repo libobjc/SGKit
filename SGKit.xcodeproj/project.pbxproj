@@ -10,6 +10,8 @@
 		9C5BEA8F1DCDEFCF00385153 /* SGKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C5BEA8D1DCDEFCF00385153 /* SGKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CCE87641DCF6E4E00B62C21 /* UIViewController+SGExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CCE87621DCF6E4E00B62C21 /* UIViewController+SGExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CCE87651DCF6E4E00B62C21 /* UIViewController+SGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE87631DCF6E4E00B62C21 /* UIViewController+SGExtension.m */; };
+		9CCE87681DCF765000B62C21 /* UIScreen+SGExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CCE87661DCF765000B62C21 /* UIScreen+SGExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9CCE87691DCF765000B62C21 /* UIScreen+SGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE87671DCF765000B62C21 /* UIScreen+SGExtension.m */; };
 		9CDD5F471DCE30B200AB7057 /* SGCollectionReusableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CDD5F411DCE30B200AB7057 /* SGCollectionReusableView.h */; };
 		9CDD5F481DCE30B200AB7057 /* SGCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDD5F421DCE30B200AB7057 /* SGCollectionReusableView.m */; };
 		9CDD5F491DCE30B200AB7057 /* SGCollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CDD5F431DCE30B200AB7057 /* SGCollectionViewFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -26,6 +28,8 @@
 		9C5BEA8E1DCDEFCF00385153 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CCE87621DCF6E4E00B62C21 /* UIViewController+SGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SGExtension.h"; sourceTree = "<group>"; };
 		9CCE87631DCF6E4E00B62C21 /* UIViewController+SGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SGExtension.m"; sourceTree = "<group>"; };
+		9CCE87661DCF765000B62C21 /* UIScreen+SGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+SGExtension.h"; sourceTree = "<group>"; };
+		9CCE87671DCF765000B62C21 /* UIScreen+SGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+SGExtension.m"; sourceTree = "<group>"; };
 		9CDD5F411DCE30B200AB7057 /* SGCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCollectionReusableView.h; sourceTree = "<group>"; };
 		9CDD5F421DCE30B200AB7057 /* SGCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGCollectionReusableView.m; sourceTree = "<group>"; };
 		9CDD5F431DCE30B200AB7057 /* SGCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCollectionViewFlowLayout.h; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				9CE66AEC1DCEF60500C4ED11 /* UIColor+SGExtension.m */,
 				9CCE87621DCF6E4E00B62C21 /* UIViewController+SGExtension.h */,
 				9CCE87631DCF6E4E00B62C21 /* UIViewController+SGExtension.m */,
+				9CCE87661DCF765000B62C21 /* UIScreen+SGExtension.h */,
+				9CCE87671DCF765000B62C21 /* UIScreen+SGExtension.m */,
 			);
 			path = SGCategory;
 			sourceTree = "<group>";
@@ -115,6 +121,7 @@
 			files = (
 				9C5BEA8F1DCDEFCF00385153 /* SGKit.h in Headers */,
 				9CE66AED1DCEF60500C4ED11 /* UIColor+SGExtension.h in Headers */,
+				9CCE87681DCF765000B62C21 /* UIScreen+SGExtension.h in Headers */,
 				9CCE87641DCF6E4E00B62C21 /* UIViewController+SGExtension.h in Headers */,
 				9CDD5F491DCE30B200AB7057 /* SGCollectionViewFlowLayout.h in Headers */,
 				9CDD5F471DCE30B200AB7057 /* SGCollectionReusableView.h in Headers */,
@@ -194,6 +201,7 @@
 				9CDD5F4A1DCE30B200AB7057 /* SGCollectionViewFlowLayout.m in Sources */,
 				9CDD5F481DCE30B200AB7057 /* SGCollectionReusableView.m in Sources */,
 				9CDD5F4C1DCE30B200AB7057 /* SGCollectionViewLayoutAttributes.m in Sources */,
+				9CCE87691DCF765000B62C21 /* UIScreen+SGExtension.m in Sources */,
 				9CE66AEE1DCEF60500C4ED11 /* UIColor+SGExtension.m in Sources */,
 				9CCE87651DCF6E4E00B62C21 /* UIViewController+SGExtension.m in Sources */,
 			);
