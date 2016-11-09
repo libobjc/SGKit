@@ -12,6 +12,8 @@
 		9CCE87651DCF6E4E00B62C21 /* UIViewController+SGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE87631DCF6E4E00B62C21 /* UIViewController+SGExtension.m */; };
 		9CCE87681DCF765000B62C21 /* UIScreen+SGExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CCE87661DCF765000B62C21 /* UIScreen+SGExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CCE87691DCF765000B62C21 /* UIScreen+SGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE87671DCF765000B62C21 /* UIScreen+SGExtension.m */; };
+		9CD491091DD321DC002D978A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD491081DD321DC002D978A /* Foundation.framework */; };
+		9CD491FB1DD33671002D978A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD491FA1DD33671002D978A /* UIKit.framework */; };
 		9CDD5F471DCE30B200AB7057 /* SGCollectionReusableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CDD5F411DCE30B200AB7057 /* SGCollectionReusableView.h */; };
 		9CDD5F481DCE30B200AB7057 /* SGCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDD5F421DCE30B200AB7057 /* SGCollectionReusableView.m */; };
 		9CDD5F491DCE30B200AB7057 /* SGCollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CDD5F431DCE30B200AB7057 /* SGCollectionViewFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -30,6 +32,8 @@
 		9CCE87631DCF6E4E00B62C21 /* UIViewController+SGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SGExtension.m"; sourceTree = "<group>"; };
 		9CCE87661DCF765000B62C21 /* UIScreen+SGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+SGExtension.h"; sourceTree = "<group>"; };
 		9CCE87671DCF765000B62C21 /* UIScreen+SGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+SGExtension.m"; sourceTree = "<group>"; };
+		9CD491081DD321DC002D978A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9CD491FA1DD33671002D978A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9CDD5F411DCE30B200AB7057 /* SGCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCollectionReusableView.h; sourceTree = "<group>"; };
 		9CDD5F421DCE30B200AB7057 /* SGCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGCollectionReusableView.m; sourceTree = "<group>"; };
 		9CDD5F431DCE30B200AB7057 /* SGCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCollectionViewFlowLayout.h; sourceTree = "<group>"; };
@@ -45,6 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CD491FB1DD33671002D978A /* UIKit.framework in Frameworks */,
+				9CD491091DD321DC002D978A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +62,7 @@
 			children = (
 				9C5BEA8C1DCDEFCF00385153 /* SGKit */,
 				9C5BEA8B1DCDEFCF00385153 /* Products */,
+				9CD491071DD321DC002D978A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,6 +91,15 @@
 				9CDD5F401DCE30B200AB7057 /* SGCollectionView */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		9CD491071DD321DC002D978A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9CD491FA1DD33671002D978A /* UIKit.framework */,
+				9CD491081DD321DC002D978A /* Foundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		9CDD5F401DCE30B200AB7057 /* SGCollectionView */ = {
