@@ -16,4 +16,8 @@
 + (instancetype)sg_colorWithRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue; // 0~255
 + (instancetype)sg_colorWithRed:(NSInteger)red green:(NSInteger)green blue:(NSInteger)blue alpha:(CGFloat)alpha;
 
++ (instancetype)sg_redColor;
++ (instancetype)sg_greenColor;
++ (instancetype)sg_grayColor;
+
 @end

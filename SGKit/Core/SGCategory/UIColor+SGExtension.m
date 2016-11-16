@@ -38,4 +38,19 @@
     return [UIColor colorWithRed:red / 255.0 green:green / 255.0 blue:blue / 255.0 alpha:alpha];
 }
 
++ (instancetype)sg_redColor
+{
+    return [self sg_colorWithRed:229 green:37 blue:33];
+}
+
++ (instancetype)sg_greenColor
+{
+    return [self sg_colorWithRGB:0x0fc584];
+}
+
++ (instancetype)sg_grayColor
+{
+    return [self sg_colorWithRed:246 green:246 blue:246];
+}
+
 @end
