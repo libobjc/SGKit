@@ -56,16 +56,13 @@ typedef NS_ENUM(NSUInteger, SGPageControlPosition) {
 - (void)pause;
 - (void)reloadData;
 
-- (void)releaseTimer;   // auto execute when removeFromSuperView
+- (void)clearTimer;   // auto execute when removeFromSuperView
 
 // pageControl
 @property (nonatomic, assign) SGPageControlStyle pageControlStyle; // default is SGPageControlStyleSystem
 @property (nonatomic, assign) SGPageControlPosition pageControlPosition; // default is SGPageControlPositionBottomCenter
 @property (nonatomic, assign) CGFloat pageControlHorizontalMargin; // default is 10
 @property (nonatomic, assign) CGFloat pageControlVerticalMargin; // default is 3
-
-- (void)setPageControlStyle:(SGPageControlStyle)style position:(SGPageControlPosition)position;
-- (void)setPageControlMarginHorizontal:(CGFloat)horizontal vertical:(CGFloat)vertical;
 
 @end
 

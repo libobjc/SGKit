@@ -14,6 +14,7 @@
 		9CCE87691DCF765000B62C21 /* UIScreen+SGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE87671DCF765000B62C21 /* UIScreen+SGExtension.m */; };
 		9CD17A141DDD4AFC00C2A834 /* SGImagePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CD17A121DDD4AFC00C2A834 /* SGImagePlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CD17A151DDD4AFC00C2A834 /* SGImagePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD17A131DDD4AFC00C2A834 /* SGImagePlayer.m */; };
+		9CD17A3C1DDD5BF900C2A834 /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD17A3B1DDD5BF900C2A834 /* Masonry.framework */; };
 		9CD491091DD321DC002D978A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD491081DD321DC002D978A /* Foundation.framework */; };
 		9CD491FB1DD33671002D978A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD491FA1DD33671002D978A /* UIKit.framework */; };
 		9CDD5F471DCE30B200AB7057 /* SGCollectionReusableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CDD5F411DCE30B200AB7057 /* SGCollectionReusableView.h */; };
@@ -36,6 +37,7 @@
 		9CCE87671DCF765000B62C21 /* UIScreen+SGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+SGExtension.m"; sourceTree = "<group>"; };
 		9CD17A121DDD4AFC00C2A834 /* SGImagePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGImagePlayer.h; sourceTree = "<group>"; };
 		9CD17A131DDD4AFC00C2A834 /* SGImagePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGImagePlayer.m; sourceTree = "<group>"; };
+		9CD17A3B1DDD5BF900C2A834 /* Masonry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Masonry.framework; path = "../SGVendors/Masonry-master/build/Debug-iphoneos/Masonry.framework"; sourceTree = "<group>"; };
 		9CD491081DD321DC002D978A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9CD491FA1DD33671002D978A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9CDD5F411DCE30B200AB7057 /* SGCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCollectionReusableView.h; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CD17A3C1DDD5BF900C2A834 /* Masonry.framework in Frameworks */,
 				9CD491FB1DD33671002D978A /* UIKit.framework in Frameworks */,
 				9CD491091DD321DC002D978A /* Foundation.framework in Frameworks */,
 			);
@@ -110,6 +113,7 @@
 		9CD491071DD321DC002D978A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9CD17A3B1DDD5BF900C2A834 /* Masonry.framework */,
 				9CD491FA1DD33671002D978A /* UIKit.framework */,
 				9CD491081DD321DC002D978A /* Foundation.framework */,
 			);
