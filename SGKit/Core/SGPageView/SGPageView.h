@@ -13,7 +13,7 @@
 @protocol SGPageViewDelegate <NSObject>
 
 - (NSInteger)numberOfPagesInPageView:(SGPageView *)pageView;
-- (UIView *)pageView:(SGPageView *)pageView viewForIndex:(NSInteger)index;
+- (UIView *)pageView:(SGPageView *)pageView viewAtIndex:(NSInteger)index;
 - (void)pageView:(SGPageView *)pageView didScrollToIndex:(NSInteger)index;
 
 @end

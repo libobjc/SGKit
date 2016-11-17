@@ -16,8 +16,6 @@
 
 @property (nonatomic, strong) UIScrollView * scrollView;
 @property (nonatomic, assign) NSInteger index;
-@property (nonatomic, assign) BOOL hasSetup;
-
 @property (nonatomic, assign) NSInteger numberOfPage;
 @property (nonatomic, strong) NSArray <UIView *> * pages;
 
@@ -69,7 +67,7 @@
     self.numberOfPage = [self.delegate numberOfPagesInPageView:self];
     NSMutableArray * temp = [NSMutableArray arrayWithCapacity:self.numberOfPage];
     for (NSInteger i = 0; i < self.numberOfPage; i++) {
-        UIView * view = [self.delegate pageView:self viewForIndex:i];
+        UIView * view = [self.delegate pageView:self viewAtIndex:i];
         [temp addObject:view];
     }
     self.pages = temp;
