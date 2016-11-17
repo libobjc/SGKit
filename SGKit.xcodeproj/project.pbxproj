@@ -12,6 +12,8 @@
 		9CCE87651DCF6E4E00B62C21 /* UIViewController+SGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE87631DCF6E4E00B62C21 /* UIViewController+SGExtension.m */; };
 		9CCE87681DCF765000B62C21 /* UIScreen+SGExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CCE87661DCF765000B62C21 /* UIScreen+SGExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CCE87691DCF765000B62C21 /* UIScreen+SGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE87671DCF765000B62C21 /* UIScreen+SGExtension.m */; };
+		9CD17A141DDD4AFC00C2A834 /* SGImagePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CD17A121DDD4AFC00C2A834 /* SGImagePlayer.h */; };
+		9CD17A151DDD4AFC00C2A834 /* SGImagePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD17A131DDD4AFC00C2A834 /* SGImagePlayer.m */; };
 		9CD491091DD321DC002D978A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD491081DD321DC002D978A /* Foundation.framework */; };
 		9CD491FB1DD33671002D978A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD491FA1DD33671002D978A /* UIKit.framework */; };
 		9CDD5F471DCE30B200AB7057 /* SGCollectionReusableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CDD5F411DCE30B200AB7057 /* SGCollectionReusableView.h */; };
@@ -32,6 +34,8 @@
 		9CCE87631DCF6E4E00B62C21 /* UIViewController+SGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SGExtension.m"; sourceTree = "<group>"; };
 		9CCE87661DCF765000B62C21 /* UIScreen+SGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+SGExtension.h"; sourceTree = "<group>"; };
 		9CCE87671DCF765000B62C21 /* UIScreen+SGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+SGExtension.m"; sourceTree = "<group>"; };
+		9CD17A121DDD4AFC00C2A834 /* SGImagePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGImagePlayer.h; sourceTree = "<group>"; };
+		9CD17A131DDD4AFC00C2A834 /* SGImagePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGImagePlayer.m; sourceTree = "<group>"; };
 		9CD491081DD321DC002D978A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9CD491FA1DD33671002D978A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9CDD5F411DCE30B200AB7057 /* SGCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCollectionReusableView.h; sourceTree = "<group>"; };
@@ -87,10 +91,20 @@
 		9C5BEACD1DCDF07600385153 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				9CD17A111DDD4AFC00C2A834 /* SGImagePlyer */,
 				9CDD5F4D1DCE37D500AB7057 /* SGCategory */,
 				9CDD5F401DCE30B200AB7057 /* SGCollectionView */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		9CD17A111DDD4AFC00C2A834 /* SGImagePlyer */ = {
+			isa = PBXGroup;
+			children = (
+				9CD17A121DDD4AFC00C2A834 /* SGImagePlayer.h */,
+				9CD17A131DDD4AFC00C2A834 /* SGImagePlayer.m */,
+			);
+			path = SGImagePlyer;
 			sourceTree = "<group>";
 		};
 		9CD491071DD321DC002D978A /* Frameworks */ = {
@@ -142,6 +156,7 @@
 				9CDD5F491DCE30B200AB7057 /* SGCollectionViewFlowLayout.h in Headers */,
 				9CDD5F471DCE30B200AB7057 /* SGCollectionReusableView.h in Headers */,
 				9CDD5F4B1DCE30B200AB7057 /* SGCollectionViewLayoutAttributes.h in Headers */,
+				9CD17A141DDD4AFC00C2A834 /* SGImagePlayer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CDD5F4A1DCE30B200AB7057 /* SGCollectionViewFlowLayout.m in Sources */,
+				9CD17A151DDD4AFC00C2A834 /* SGImagePlayer.m in Sources */,
 				9CDD5F481DCE30B200AB7057 /* SGCollectionReusableView.m in Sources */,
 				9CDD5F4C1DCE30B200AB7057 /* SGCollectionViewLayoutAttributes.m in Sources */,
 				9CCE87691DCF765000B62C21 /* UIScreen+SGExtension.m in Sources */,
