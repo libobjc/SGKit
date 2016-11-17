@@ -460,6 +460,7 @@ static CGFloat const SGImagePlayerPageControlHeight = 25;
     [self addSubview:self.scrllView];
     
     self.autoScroll = YES;
+    self.autoPauseAndResumeWhenMoveToWindow = YES;
     self.animationDuration = SGImagePlayerAnimationDuration;
     self.pageControlStyle = SGPageControlStyleSystem;
     self.pageControlPosition = SGPageControlPositionBottomCenter;
@@ -540,6 +541,17 @@ static CGFloat const SGImagePlayerPageControlHeight = 25;
         [self clearTimer];
     }
     [super removeFromSuperview];
+}
+
+- (void)didMoveToWindow
+{
+    if (self.autoPauseAndResumeWhenMoveToWindow) {
+        if (self.window) {
+            [self resume];
+        } else {
+            [self pause];
+        }
+    }
 }
 
 @end

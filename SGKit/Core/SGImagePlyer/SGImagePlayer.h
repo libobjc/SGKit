@@ -50,6 +50,7 @@ typedef NS_ENUM(NSUInteger, SGPageControlPosition) {
 @property (nonatomic, weak) id <SGImagePlayerDelegate> delegate;
 @property (nonatomic, assign, readonly) BOOL scrolling;
 @property (nonatomic, assign) BOOL autoScroll; // defautl is YES
+@property (nonatomic, assign) BOOL autoPauseAndResumeWhenMoveToWindow;   // default is YES
 @property (nonatomic, assign) NSTimeInterval animationDuration; // default is 2s
 
 - (void)resume;
