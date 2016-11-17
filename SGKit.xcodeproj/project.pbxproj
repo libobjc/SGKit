@@ -15,6 +15,8 @@
 		9CD17A141DDD4AFC00C2A834 /* SGImagePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CD17A121DDD4AFC00C2A834 /* SGImagePlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CD17A151DDD4AFC00C2A834 /* SGImagePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD17A131DDD4AFC00C2A834 /* SGImagePlayer.m */; };
 		9CD17A3C1DDD5BF900C2A834 /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD17A3B1DDD5BF900C2A834 /* Masonry.framework */; };
+		9CD17A401DDD940D00C2A834 /* SGPageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CD17A3E1DDD940D00C2A834 /* SGPageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9CD17A411DDD940D00C2A834 /* SGPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD17A3F1DDD940D00C2A834 /* SGPageView.m */; };
 		9CD491091DD321DC002D978A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD491081DD321DC002D978A /* Foundation.framework */; };
 		9CD491FB1DD33671002D978A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD491FA1DD33671002D978A /* UIKit.framework */; };
 		9CDD5F471DCE30B200AB7057 /* SGCollectionReusableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CDD5F411DCE30B200AB7057 /* SGCollectionReusableView.h */; };
@@ -38,6 +40,8 @@
 		9CD17A121DDD4AFC00C2A834 /* SGImagePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGImagePlayer.h; sourceTree = "<group>"; };
 		9CD17A131DDD4AFC00C2A834 /* SGImagePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGImagePlayer.m; sourceTree = "<group>"; };
 		9CD17A3B1DDD5BF900C2A834 /* Masonry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Masonry.framework; path = "../SGVendors/Masonry-master/build/Debug-iphoneos/Masonry.framework"; sourceTree = "<group>"; };
+		9CD17A3E1DDD940D00C2A834 /* SGPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPageView.h; sourceTree = "<group>"; };
+		9CD17A3F1DDD940D00C2A834 /* SGPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPageView.m; sourceTree = "<group>"; };
 		9CD491081DD321DC002D978A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9CD491FA1DD33671002D978A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9CDD5F411DCE30B200AB7057 /* SGCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCollectionReusableView.h; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 		9C5BEACD1DCDF07600385153 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				9CD17A3D1DDD93D600C2A834 /* SGPageView */,
 				9CD17A111DDD4AFC00C2A834 /* SGImagePlyer */,
 				9CDD5F4D1DCE37D500AB7057 /* SGCategory */,
 				9CDD5F401DCE30B200AB7057 /* SGCollectionView */,
@@ -108,6 +113,15 @@
 				9CD17A131DDD4AFC00C2A834 /* SGImagePlayer.m */,
 			);
 			path = SGImagePlyer;
+			sourceTree = "<group>";
+		};
+		9CD17A3D1DDD93D600C2A834 /* SGPageView */ = {
+			isa = PBXGroup;
+			children = (
+				9CD17A3E1DDD940D00C2A834 /* SGPageView.h */,
+				9CD17A3F1DDD940D00C2A834 /* SGPageView.m */,
+			);
+			path = SGPageView;
 			sourceTree = "<group>";
 		};
 		9CD491071DD321DC002D978A /* Frameworks */ = {
@@ -159,6 +173,7 @@
 				9CCE87641DCF6E4E00B62C21 /* UIViewController+SGExtension.h in Headers */,
 				9CDD5F491DCE30B200AB7057 /* SGCollectionViewFlowLayout.h in Headers */,
 				9CD17A141DDD4AFC00C2A834 /* SGImagePlayer.h in Headers */,
+				9CD17A401DDD940D00C2A834 /* SGPageView.h in Headers */,
 				9CDD5F471DCE30B200AB7057 /* SGCollectionReusableView.h in Headers */,
 				9CDD5F4B1DCE30B200AB7057 /* SGCollectionViewLayoutAttributes.h in Headers */,
 			);
@@ -234,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CDD5F4A1DCE30B200AB7057 /* SGCollectionViewFlowLayout.m in Sources */,
+				9CD17A411DDD940D00C2A834 /* SGPageView.m in Sources */,
 				9CD17A151DDD4AFC00C2A834 /* SGImagePlayer.m in Sources */,
 				9CDD5F481DCE30B200AB7057 /* SGCollectionReusableView.m in Sources */,
 				9CDD5F4C1DCE30B200AB7057 /* SGCollectionViewLayoutAttributes.m in Sources */,
