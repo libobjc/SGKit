@@ -93,7 +93,12 @@
         [self.scrollView addSubview:view];
     }
     self.pages = pagesTemp;
-    self.index = self.defaultIndex;
+    
+    NSInteger index = self.defaultIndex;
+    if (self.defaultIndex >= self.numberOfPage) {
+        index = self.numberOfPage - 1 >= 0 ? self.numberOfPage - 1 : 0;
+    }
+    self.index = index;
     
     if ([self.delegate respondsToSelector:@selector(pageTitleViewInPageView:)]) {
         self.pageTitleView = [self.delegate pageTitleViewInPageView:self];
