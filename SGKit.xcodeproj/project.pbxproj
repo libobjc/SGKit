@@ -12,7 +12,7 @@
 		9CCE87651DCF6E4E00B62C21 /* UIViewController+SGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE87631DCF6E4E00B62C21 /* UIViewController+SGExtension.m */; };
 		9CCE87681DCF765000B62C21 /* UIScreen+SGExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CCE87661DCF765000B62C21 /* UIScreen+SGExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CCE87691DCF765000B62C21 /* UIScreen+SGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE87671DCF765000B62C21 /* UIScreen+SGExtension.m */; };
-		9CD17A141DDD4AFC00C2A834 /* SGImagePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CD17A121DDD4AFC00C2A834 /* SGImagePlayer.h */; };
+		9CD17A141DDD4AFC00C2A834 /* SGImagePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CD17A121DDD4AFC00C2A834 /* SGImagePlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CD17A151DDD4AFC00C2A834 /* SGImagePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD17A131DDD4AFC00C2A834 /* SGImagePlayer.m */; };
 		9CD491091DD321DC002D978A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD491081DD321DC002D978A /* Foundation.framework */; };
 		9CD491FB1DD33671002D978A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD491FA1DD33671002D978A /* UIKit.framework */; };
@@ -154,9 +154,9 @@
 				9CCE87681DCF765000B62C21 /* UIScreen+SGExtension.h in Headers */,
 				9CCE87641DCF6E4E00B62C21 /* UIViewController+SGExtension.h in Headers */,
 				9CDD5F491DCE30B200AB7057 /* SGCollectionViewFlowLayout.h in Headers */,
+				9CD17A141DDD4AFC00C2A834 /* SGImagePlayer.h in Headers */,
 				9CDD5F471DCE30B200AB7057 /* SGCollectionReusableView.h in Headers */,
 				9CDD5F4B1DCE30B200AB7057 /* SGCollectionViewLayoutAttributes.h in Headers */,
-				9CD17A141DDD4AFC00C2A834 /* SGImagePlayer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

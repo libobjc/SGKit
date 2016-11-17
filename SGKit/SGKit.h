@@ -12,6 +12,7 @@ FOUNDATION_EXPORT double SGKitVersionNumber;    // version number
 FOUNDATION_EXPORT const unsigned char SGKitVersionString[];     // version string
 
 // class
+#import <SGKit/SGImagePlayer.h>
 #import <SGKit/SGCollectionViewFlowLayout.h>
 
 // categroy
