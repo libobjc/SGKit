@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SGPageTitleView.h"
+#import "SGPageTitleItem.h"
 
 @class SGPageView;
 
@@ -16,6 +18,10 @@
 - (UIView *)pageView:(SGPageView *)pageView viewAtIndex:(NSInteger)index;
 - (void)pageView:(SGPageView *)pageView didScrollToIndex:(NSInteger)index;
 
+@optional
+- (SGPageTitleView *)pageTitleViewInPageView:(SGPageView *)pageView;
+- (SGPageTitleItem *)pageView:(SGPageView *)pageView pageTitleView:(SGPageTitleView *)pageTitleView titleItemAtIndex:(NSInteger)index;
+
 @end
 
 @interface SGPageView : UIView
@@ -23,6 +29,8 @@
 @property (nonatomic, weak) id <SGPageViewDelegate> delegate;
 @property (nonatomic, assign, readonly) NSInteger index;
 @property (nonatomic, assign) NSInteger defaultIndex;   // default is 0
+@property (nonatomic, assign, readonly) NSInteger numberOfPage;
+@property (nonatomic, strong, readonly) SGPageTitleView * pageTitleView;
 
 - (void)reloadData;
 - (void)scrollToIndex:(NSInteger)index;

@@ -13,6 +13,8 @@ FOUNDATION_EXPORT const unsigned char SGKitVersionString[];     // version strin
 
 // class
 #import <SGKit/SGPageView.h>
+#import <SGKit/SGPageTitleView.h>
+#import <SGKit/SGPageTitleItem.h>
 #import <SGKit/SGImagePlayer.h>
 #import <SGKit/SGCollectionViewFlowLayout.h>
 

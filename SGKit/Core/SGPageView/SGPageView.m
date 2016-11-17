@@ -8,6 +8,16 @@
 
 #import "SGPageView.h"
 
+@interface SGPageTitleView ()
+
+@property (nonatomic, weak) SGPageView * pageView;
+
+- (void)reloadData;
+- (void)scrollToIndex:(NSInteger)index;
+- (void)scrollToIndex:(NSInteger)index animated:(BOOL)animated;
+
+@end
+
 @interface SGPageView () <UIScrollViewDelegate>
 
 {
@@ -18,10 +28,19 @@
 @property (nonatomic, assign) NSInteger index;
 @property (nonatomic, assign) NSInteger numberOfPage;
 @property (nonatomic, strong) NSArray <UIView *> * pages;
+@property (nonatomic, strong) SGPageTitleView * pageTitleView;
 
 @end
 
 @implementation SGPageView
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super initWithCoder:aDecoder]) {
+        [self UILayout];
+    }
+    return self;
+}
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -54,7 +73,8 @@
 - (void)reloadData
 {
     [self prepareData];
-    [self setupScrollView];
+    [self resetLayout];
+    [self.pageTitleView reloadData];
 }
 
 - (void)prepareData
@@ -63,23 +83,22 @@
         [obj removeFromSuperview];
     }];
     self.pages = nil;
+    [self.pageTitleView removeFromSuperview];
     
     self.numberOfPage = [self.delegate numberOfPagesInPageView:self];
-    NSMutableArray * temp = [NSMutableArray arrayWithCapacity:self.numberOfPage];
+    NSMutableArray <UIView *> * pagesTemp = [NSMutableArray arrayWithCapacity:self.numberOfPage];
     for (NSInteger i = 0; i < self.numberOfPage; i++) {
         UIView * view = [self.delegate pageView:self viewAtIndex:i];
-        [temp addObject:view];
+        [pagesTemp addObject:view];
+        [self.scrollView ad dSubview:view];
     }
-    self.pages = temp;
+    self.pages = pagesTemp;
     self.index = self.defaultIndex;
-}
-
-- (void)setupScrollView
-{
-    [self.pages enumerateObjectsUsingBlock:^(UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [self.scrollView addSubview:obj];
-    }];
-    [self resetLayout];
+    
+    if ([self.delegate respondsToSelector:@selector(pageTitleViewInPageView:)]) {
+        self.pageTitleView = [self.delegate pageTitleViewInPageView:self];
+        self.pageTitleView.pageView = self;
+    }
 }
 
 - (void)resetLayout
@@ -121,6 +140,7 @@
         _index = index;
         if (self.numberOfPage > index || [self.delegate respondsToSelector:@selector(pageView:didScrollToIndex:)]) {
             [self.delegate pageView:self didScrollToIndex:index];
+            [self.pageTitleView scrollToIndex:index];
         }
     }
 }
