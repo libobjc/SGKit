@@ -16,6 +16,7 @@ static CGFloat const SGPageTitleWidth = 80;
 @property (nonatomic, weak) SGPageView * pageView;
 @property (nonatomic, strong) UIScrollView * scrollView;
 @property (nonatomic, strong) NSArray <SGPageTitleItem *> * titleItems;
+@property (nonatomic, strong) UIView * bottomLineView;
 
 @end
 
@@ -41,6 +42,10 @@ static CGFloat const SGPageTitleWidth = 80;
 {
     self.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.scrollView];
+    
+    self.bottomLineHeight = 2;
+    self.bottomLineColor = [UIColor redColor];
+    self.bottomLineAnimatedDuration = 0.25;
 }
 
 - (void)scrollToIndex:(NSInteger)index
@@ -51,6 +56,7 @@ static CGFloat const SGPageTitleWidth = 80;
 - (void)scrollToIndex:(NSInteger)index animated:(BOOL)animated
 {
     [self selectedIndexDidChange];
+    [self resetBottomLineViewLocation:animated];
 }
 
 - (void)selectedIndexDidChange
@@ -79,12 +85,13 @@ static CGFloat const SGPageTitleWidth = 80;
         UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pageTitleItemTapAction:)];
         [item addGestureRecognizer:tap];
         [titleItemsTemp addObject:item];
-        [self.scrollView addSubview:item];
+        [self.scrollView insertSubview:item atIndex:0];
     }
     self.titleItems = titleItemsTemp;
     
     [self resetLayout];
     [self selectedIndexDidChange];
+    [self resetBottomLineViewLocation:NO];
 }
 
 - (void)pageTitleItemTapAction:(UITapGestureRecognizer *)tap
@@ -96,6 +103,7 @@ static CGFloat const SGPageTitleWidth = 80;
 {
     [super layoutSubviews];
     [self resetLayout];
+    [self resetBottomLineViewLocation:NO];
 }
 
 - (void)resetLayout
@@ -112,6 +120,37 @@ static CGFloat const SGPageTitleWidth = 80;
     [self scrollToIndex:self.pageView.index animated:NO];
 }
 
+- (void)resetBottomLineViewLocation:(BOOL)animated
+{
+    if (!self.bottomLineView) return;
+    if (self.bottomLineAnimatedDuration <= 0.03) animated = NO;
+    
+    CGRect selectedItemFrame = [self.titleItems objectAtIndex:self.pageView.index].frame;
+    CGRect frame = CGRectMake(selectedItemFrame.origin.x, CGRectGetHeight(self.bounds) - self.bottomLineHeight, CGRectGetWidth(selectedItemFrame), self.bottomLineHeight);
+    if (animated) {
+        [UIView animateWithDuration:self.bottomLineAnimatedDuration animations:^{
+            self.bottomLineView.frame = frame;
+        }];
+    } else {
+        self.bottomLineView.frame = frame;
+    }
+}
+
+- (void)setupBottomLineView
+{
+    if (self.showBottomLine) {
+        if (!self.bottomLineView) {
+            self.bottomLineView = [[UIView alloc] initWithFrame:CGRectZero];
+            [self.scrollView addSubview:self.bottomLineView];
+        }
+        self.bottomLineView.backgroundColor = self.bottomLineColor;
+        [self resetBottomLineViewLocation:NO];
+    } else {
+        [self.bottomLineView removeFromSuperview];
+        self.bottomLineView = nil;
+    }
+}
+
 - (UIScrollView *)scrollView
 {
     if (_scrollView == nil) {
@@ -124,6 +163,30 @@ static CGFloat const SGPageTitleWidth = 80;
         _scrollView.delegate = self;
     }
     return _scrollView;
+}
+
+- (void)setShowBottomLine:(BOOL)showBottomLine
+{
+    if (_showBottomLine != showBottomLine) {
+        _showBottomLine = showBottomLine;
+        [self setupBottomLineView];
+    }
+}
+
+- (void)setBottomLineColor:(UIColor *)bottomLineColor
+{
+    if (_bottomLineColor != bottomLineColor) {
+        _bottomLineColor = bottomLineColor;
+        [self setupBottomLineView];
+    }
+}
+
+- (void)setBottomLineHeight:(CGFloat)bottomLineHeight
+{
+    if (_bottomLineHeight != bottomLineHeight) {
+        _bottomLineHeight = bottomLineHeight;
+        [self resetBottomLineViewLocation:NO];
+    }
 }
 
 @end

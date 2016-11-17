@@ -16,7 +16,7 @@
 
 - (void)normalStyle
 {
-    self.backgroundColor = [UIColor redColor];
+    self.backgroundColor = [UIColor blackColor];
 }
 
 - (void)selectedStyle

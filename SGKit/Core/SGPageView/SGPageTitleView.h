@@ -14,4 +14,9 @@
 
 @property (nonatomic, weak, readonly) SGPageView * pageView;
 
+@property (nonatomic, assign) BOOL showBottomLine;  // default is NO
+@property (nonatomic, assign) CGFloat bottomLineHeight;     // default is 2
+@property (nonatomic, copy) UIColor * bottomLineColor;      // default is red;
+@property (nonatomic, assign) CGFloat bottomLineAnimatedDuration;       // default is 0.25s
+
 @end
