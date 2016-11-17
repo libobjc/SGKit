@@ -90,7 +90,7 @@
     for (NSInteger i = 0; i < self.numberOfPage; i++) {
         UIView * view = [self.delegate pageView:self viewAtIndex:i];
         [pagesTemp addObject:view];
-        [self.scrollView ad dSubview:view];
+        [self.scrollView addSubview:view];
     }
     self.pages = pagesTemp;
     self.index = self.defaultIndex;
