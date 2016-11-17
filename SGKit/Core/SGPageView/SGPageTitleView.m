@@ -76,6 +76,8 @@ static CGFloat const SGPageTitleWidth = 80;
     NSMutableArray <SGPageTitleItem *> * titleItemsTemp = [NSMutableArray arrayWithCapacity:self.pageView.numberOfPage];
     for (NSInteger i = 0; i < self.pageView.numberOfPage; i++) {
         SGPageTitleItem * item = [self.pageView.delegate pageView:self.pageView pageTitleView:self titleItemAtIndex:i];
+        UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pageTitleItemTapAction:)];
+        [item addGestureRecognizer:tap];
         [titleItemsTemp addObject:item];
         [self.scrollView addSubview:item];
     }
@@ -83,6 +85,11 @@ static CGFloat const SGPageTitleWidth = 80;
     
     [self resetLayout];
     [self selectedIndexDidChange];
+}
+
+- (void)pageTitleItemTapAction:(UITapGestureRecognizer *)tap
+{
+    [self.pageView scrollToIndex:[self.titleItems indexOfObject:tap.view]];
 }
 
 - (void)layoutSubviews
