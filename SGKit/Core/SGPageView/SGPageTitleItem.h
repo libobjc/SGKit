@@ -10,8 +10,9 @@
 
 @interface SGPageTitleItem : UIView
 
+@property (nonatomic, assign) CGFloat itemWidth;     // default is 80;
+
 - (void)normalStyle;
 - (void)selectedStyle;
-- (CGFloat)itemWidth;
 
 @end

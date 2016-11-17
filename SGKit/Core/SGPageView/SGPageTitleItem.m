@@ -10,8 +10,25 @@
 
 @implementation SGPageTitleItem
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
-    CGFloat width;
+    if (self = [super initWithCoder:aDecoder]) {
+        [self UILayout];
+    }
+    return self;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    if (self = [super initWithFrame:frame]) {
+        [self UILayout];
+    }
+    return self;
+}
+
+- (void)UILayout
+{
+    self.itemWidth = 80;
 }
 
 - (void)normalStyle
@@ -22,14 +39,6 @@
 - (void)selectedStyle
 {
     self.backgroundColor = [UIColor cyanColor];
-}
-
-- (CGFloat)itemWidth
-{
-    if (width <= 0) {
-        width = arc4random() % 100 + 100;
-    }
-    return width;
 }
 
 @end
