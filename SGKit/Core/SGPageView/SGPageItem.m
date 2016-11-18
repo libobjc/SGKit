@@ -23,7 +23,7 @@
         _contentView = contentView;
         contentView.frame = self.bounds;
         [self.scrollView addSubview:contentView];
-        self.scrollView = contentView.backgroundColor;
+        self.scrollView.backgroundColor = contentView.backgroundColor;
     }
 }
 
