@@ -8,6 +8,10 @@
 
 #import "SGSwipeView.h"
 
+@interface SGPageView ()
+- (NSArray <UIScrollView *> *)fetchScrollViews;
+@end
+
 @interface SGSwipeView ()
 
 {
@@ -79,15 +83,12 @@
     }
     
     NSMutableArray * scrollViewsTemp = [NSMutableArray array];
-    [self.pageView.pages enumerateObjectsUsingBlock:^(UIView <SGPageItemDelegate> * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([obj respondsToSelector:@selector(scrollViewInPageItem:)]) {
-            UIScrollView * scrollView = [obj scrollViewInPageItem:obj];
-            [scrollViewsTemp addObject:scrollView];
-            scrollView.contentInset = UIEdgeInsetsMake(self.scrollViewContentInsetHeight, 0, 0, 0);
-            [scrollView setContentOffset:CGPointMake(0, -self.scrollViewContentInsetHeight) animated:NO];
-            [scrollView.panGestureRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:NULL];
-            [scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:NULL];
-        }
+    [self.pageView.fetchScrollViews enumerateObjectsUsingBlock:^(UIScrollView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [scrollViewsTemp addObject:obj];
+        obj.contentInset = UIEdgeInsetsMake(self.scrollViewContentInsetHeight, 0, 0, 0);
+        [obj setContentOffset:CGPointMake(0, -self.scrollViewContentInsetHeight) animated:NO];
+        [obj.panGestureRecognizer addObserver:self forKeyPath:@"state" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:NULL];
+        [obj addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:NULL];
     }];
     self.scrollViews = scrollViewsTemp;
     
@@ -111,6 +112,7 @@
 
 - (void)resetLayout
 {
+    self.contentViewTopDistant = 0;
     self.pageView.frame = self.bounds;
     [self resetHeaderAndTitleViewLayout];
 }

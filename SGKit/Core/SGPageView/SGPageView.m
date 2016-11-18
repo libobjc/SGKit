@@ -106,6 +106,31 @@
     }
 }
 
+- (NSArray <UIScrollView *> *)fetchScrollViews
+{
+    NSMutableArray <UIScrollView *> * scrollViewsTemp = [NSMutableArray arrayWithCapacity:self.numberOfPage];
+    NSMutableArray <UIView <SGPageViewDelegate> *> * pagesTemp = [NSMutableArray arrayWithCapacity:self.numberOfPage];
+    [self.pages enumerateObjectsUsingBlock:^(UIView <SGPageItemDelegate> * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        UIScrollView * scrollView;
+        if ([obj respondsToSelector:@selector(scrollViewInPageItem:)]) {
+            UIScrollView * view = [obj scrollViewInPageItem:obj];
+            if ([view isKindOfClass:[UIScrollView class]]) scrollView = view;
+            [pagesTemp addObject:obj];
+        }
+        if (!scrollView) {
+            SGPageItem * item = [[SGPageItem alloc] initWithFrame:obj.frame];
+            [self.scrollView addSubview:item];
+            item.contentView = obj;
+            scrollView = [item scrollViewInPageItem:item];
+            [pagesTemp addObject:item];
+        }
+        [scrollViewsTemp addObject:scrollView];
+    }];
+    self.pages = pagesTemp;
+    return scrollViewsTemp;
+}
+
 - (void)resetLayout
 {
     self.scrollView.frame = self.bounds;

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SGPageItem.h"
 #import "SGPageTitleView.h"
 #import "SGPageTitleItem.h"
 
@@ -22,11 +23,6 @@
 - (SGPageTitleView *)pageTitleViewInPageView:(SGPageView *)pageView;
 - (SGPageTitleItem *)pageView:(SGPageView *)pageView pageTitleView:(SGPageTitleView *)pageTitleView titleItemAtIndex:(NSInteger)index;
 
-@end
-
-@protocol SGPageItemDelegate <NSObject>
-@optional
-- (UIScrollView *)scrollViewInPageItem:(UIView *)pageItem;
 @end
 
 @interface SGPageView : UIView
