@@ -13,6 +13,7 @@ static CGFloat const SGPageTitleWidth = 80;
 
 @interface SGPageTitleView () <UIScrollViewDelegate>
 
+@property (nonatomic, assign) BOOL didLoadData;
 @property (nonatomic, weak) SGPageView * pageView;
 @property (nonatomic, strong) UIScrollView * scrollView;
 @property (nonatomic, strong) NSArray <SGPageTitleItem *> * titleItems;
@@ -74,6 +75,8 @@ static CGFloat const SGPageTitleWidth = 80;
 
 - (void)reloadData
 {
+    self.didLoadData = NO;
+    
     [self.titleItems enumerateObjectsUsingBlock:^(UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj removeFromSuperview];
     }];
@@ -91,6 +94,10 @@ static CGFloat const SGPageTitleWidth = 80;
     }
     self.titleItems = titleItemsTemp;
     
+    if (self.titleItems.count > 0) {
+        self.didLoadData = YES;
+    }
+    
     [self resetLayout];
 }
 
@@ -107,6 +114,8 @@ static CGFloat const SGPageTitleWidth = 80;
 
 - (void)resetLayout
 {
+    if (!self.didLoadData) return;
+    
     self.scrollView.frame = self.bounds;
     
     __block CGFloat left = 0;
@@ -121,7 +130,7 @@ static CGFloat const SGPageTitleWidth = 80;
 
 - (void)resetBottomLineViewLocation:(BOOL)animated completion:(void (^)(BOOL finished))completion
 {
-    if (!self.bottomLineView) {
+    if (!self.bottomLineView || !self.didLoadData) {
         if (completion) {
             completion(YES);
         }
@@ -152,22 +161,26 @@ static CGFloat const SGPageTitleWidth = 80;
 
 - (void)resetScrollViewLocation:(BOOL)animated
 {
-    CGRect frame = [self.titleItems objectAtIndex:self.pageView.index].frame;
-    CGFloat centerX = frame.origin.x + frame.size.width / 2;
-    CGFloat halfWidth = self.scrollView.frame.size.width / 2;
-    CGPoint point;
-    if (centerX >= halfWidth && centerX <= (self.scrollView.contentSize.width - halfWidth)) {
-        point = CGPointMake(centerX - halfWidth, 0);
-    } else if (centerX > (self.scrollView.contentSize.width - halfWidth)) {
-        point = CGPointMake(self.scrollView.contentSize.width - self.scrollView.frame.size.width, 0);
-    } else if (centerX < halfWidth) {
-        point = CGPointMake(0, 0);
-    }
+    if (!self.didLoadData) return;
     
-    if (animated) {
-        [self.scrollView setContentOffset:point animated:YES];
-    } else {
-        self.scrollView.contentOffset = point;
+    if (self.scrollView.contentSize.width > self.scrollView.frame.size.width) {
+        CGRect frame = [self.titleItems objectAtIndex:self.pageView.index].frame;
+        CGFloat centerX = frame.origin.x + frame.size.width / 2;
+        CGFloat halfWidth = self.scrollView.frame.size.width / 2;
+        CGPoint point;
+        if (centerX >= halfWidth && centerX <= (self.scrollView.contentSize.width - halfWidth)) {
+            point = CGPointMake(centerX - halfWidth, 0);
+        } else if (centerX > (self.scrollView.contentSize.width - halfWidth)) {
+            point = CGPointMake(self.scrollView.contentSize.width - self.scrollView.frame.size.width, 0);
+        } else if (centerX < halfWidth) {
+            point = CGPointMake(0, 0);
+        }
+        
+        if (animated) {
+            [self.scrollView setContentOffset:point animated:YES];
+        } else {
+            self.scrollView.contentOffset = point;
+        }
     }
 }
 
