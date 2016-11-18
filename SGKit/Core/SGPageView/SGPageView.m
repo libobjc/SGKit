@@ -27,7 +27,7 @@
 @property (nonatomic, strong) UIScrollView * scrollView;
 @property (nonatomic, assign) NSInteger index;
 @property (nonatomic, assign) NSInteger numberOfPage;
-@property (nonatomic, strong) NSArray <UIView *> * pages;
+@property (nonatomic, strong) NSArray <UIView <SGPageItemDelegate> *> * pages;
 @property (nonatomic, strong) SGPageTitleView * pageTitleView;
 
 @end

@@ -24,6 +24,11 @@
 
 @end
 
+@protocol SGPageItemDelegate <NSObject>
+@optional
+- (UIScrollView *)scrollViewInPageItem:(UIView *)pageItem;
+@end
+
 @interface SGPageView : UIView
 
 @property (nonatomic, weak) id <SGPageViewDelegate> delegate;
@@ -31,6 +36,7 @@
 @property (nonatomic, assign) NSInteger defaultIndex;   // default is 0
 @property (nonatomic, assign, readonly) NSInteger numberOfPage;
 @property (nonatomic, strong, readonly) SGPageTitleView * pageTitleView;
+@property (nonatomic, strong, readonly) NSArray <UIView <SGPageItemDelegate> *> * pages;
 
 - (void)reloadData;
 - (void)scrollToIndex:(NSInteger)index;

@@ -12,6 +12,7 @@ FOUNDATION_EXPORT double SGKitVersionNumber;    // version number
 FOUNDATION_EXPORT const unsigned char SGKitVersionString[];     // version string
 
 // class
+#import <SGKit/SGSwipeView.h>
 #import <SGKit/SGPageView.h>
 #import <SGKit/SGPageTitleView.h>
 #import <SGKit/SGPageTitleItem.h>

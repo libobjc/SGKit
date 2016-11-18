@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9C5BEA8F1DCDEFCF00385153 /* SGKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C5BEA8D1DCDEFCF00385153 /* SGKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C5C542D1DDEE5D80066C389 /* SGSwipeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C5C542B1DDEE5D80066C389 /* SGSwipeView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C5C542E1DDEE5D80066C389 /* SGSwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C542C1DDEE5D80066C389 /* SGSwipeView.m */; };
 		9CCE87641DCF6E4E00B62C21 /* UIViewController+SGExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CCE87621DCF6E4E00B62C21 /* UIViewController+SGExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CCE87651DCF6E4E00B62C21 /* UIViewController+SGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE87631DCF6E4E00B62C21 /* UIViewController+SGExtension.m */; };
 		9CCE87681DCF765000B62C21 /* UIScreen+SGExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CCE87661DCF765000B62C21 /* UIScreen+SGExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -37,6 +39,8 @@
 		9C5BEA8A1DCDEFCF00385153 /* SGKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SGKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C5BEA8D1DCDEFCF00385153 /* SGKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGKit.h; sourceTree = "<group>"; };
 		9C5BEA8E1DCDEFCF00385153 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C5C542B1DDEE5D80066C389 /* SGSwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSwipeView.h; sourceTree = "<group>"; };
+		9C5C542C1DDEE5D80066C389 /* SGSwipeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSwipeView.m; sourceTree = "<group>"; };
 		9CCE87621DCF6E4E00B62C21 /* UIViewController+SGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SGExtension.h"; sourceTree = "<group>"; };
 		9CCE87631DCF6E4E00B62C21 /* UIViewController+SGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SGExtension.m"; sourceTree = "<group>"; };
 		9CCE87661DCF765000B62C21 /* UIScreen+SGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+SGExtension.h"; sourceTree = "<group>"; };
@@ -106,12 +110,22 @@
 		9C5BEACD1DCDF07600385153 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				9C5C542A1DDEE5C70066C389 /* SGSwipeView */,
 				9CD17A3D1DDD93D600C2A834 /* SGPageView */,
 				9CD17A111DDD4AFC00C2A834 /* SGImagePlyer */,
 				9CDD5F4D1DCE37D500AB7057 /* SGCategory */,
 				9CDD5F401DCE30B200AB7057 /* SGCollectionView */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		9C5C542A1DDEE5C70066C389 /* SGSwipeView */ = {
+			isa = PBXGroup;
+			children = (
+				9C5C542B1DDEE5D80066C389 /* SGSwipeView.h */,
+				9C5C542C1DDEE5D80066C389 /* SGSwipeView.m */,
+			);
+			path = SGSwipeView;
 			sourceTree = "<group>";
 		};
 		9CD17A111DDD4AFC00C2A834 /* SGImagePlyer */ = {
@@ -186,6 +200,7 @@
 				9CDD5F491DCE30B200AB7057 /* SGCollectionViewFlowLayout.h in Headers */,
 				9CD17A141DDD4AFC00C2A834 /* SGImagePlayer.h in Headers */,
 				9CD17A401DDD940D00C2A834 /* SGPageView.h in Headers */,
+				9C5C542D1DDEE5D80066C389 /* SGSwipeView.h in Headers */,
 				9CD17A4C1DDDB9D200C2A834 /* SGPageTitleItem.h in Headers */,
 				9CD17A481DDDA56700C2A834 /* SGPageTitleView.h in Headers */,
 				9CDD5F471DCE30B200AB7057 /* SGCollectionReusableView.h in Headers */,
@@ -270,6 +285,7 @@
 				9CDD5F481DCE30B200AB7057 /* SGCollectionReusableView.m in Sources */,
 				9CDD5F4C1DCE30B200AB7057 /* SGCollectionViewLayoutAttributes.m in Sources */,
 				9CCE87691DCF765000B62C21 /* UIScreen+SGExtension.m in Sources */,
+				9C5C542E1DDEE5D80066C389 /* SGSwipeView.m in Sources */,
 				9CE66AEE1DCEF60500C4ED11 /* UIColor+SGExtension.m in Sources */,
 				9CCE87651DCF6E4E00B62C21 /* UIViewController+SGExtension.m in Sources */,
 			);
