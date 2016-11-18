@@ -129,8 +129,15 @@ static CGFloat const SGPageTitleWidth = 80;
     }
     if (self.bottomLineAnimatedDuration <= 0.03) animated = NO;
     
-    CGRect selectedItemFrame = [self.titleItems objectAtIndex:self.pageView.index].frame;
-    CGRect frame = CGRectMake(selectedItemFrame.origin.x, CGRectGetHeight(self.bounds) - self.bottomLineHeight, CGRectGetWidth(selectedItemFrame), self.bottomLineHeight);
+    SGPageTitleItem * item = [self.titleItems objectAtIndex:self.pageView.index];
+    CGFloat x = CGRectGetMinX(item.frame);
+    CGFloat width = CGRectGetWidth(item.frame);
+    if (item.bottomLineWidth < item.itemWidth) {
+        x = CGRectGetMinX(item.frame) + (item.itemWidth - item.bottomLineWidth) / 2;
+        width = item.bottomLineWidth;
+    }
+    
+    CGRect frame = CGRectMake(x, CGRectGetHeight(self.bounds) - self.bottomLineHeight, width, self.bottomLineHeight);
     if (animated) {
         [UIView animateWithDuration:self.bottomLineAnimatedDuration animations:^{
             self.bottomLineView.frame = frame;

@@ -29,6 +29,7 @@
 - (void)UILayout
 {
     self.itemWidth = 80;
+    self.bottomLineWidth = 80;
 }
 
 - (void)normalStyle
