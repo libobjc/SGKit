@@ -118,13 +118,13 @@ static CGFloat const SGPageTitleWidth = 80;
     
     self.scrollView.frame = self.bounds;
     
-    __block CGFloat left = 0;
+    __block CGFloat left = self.leftMargin;
     [self.titleItems enumerateObjectsUsingBlock:^(SGPageTitleItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         obj.frame = CGRectMake(left, 0, obj.itemWidth, CGRectGetHeight(self.bounds));
         left += obj.itemWidth;
     }];
     
-    self.scrollView.contentSize = CGSizeMake(left, CGRectGetHeight(self.bounds));
+    self.scrollView.contentSize = CGSizeMake(left + self.rightMargin, CGRectGetHeight(self.bounds));
     [self scrollToIndex:self.pageView.index animated:NO];
 }
 
@@ -234,6 +234,22 @@ static CGFloat const SGPageTitleWidth = 80;
     if (_bottomLineHeight != bottomLineHeight) {
         _bottomLineHeight = bottomLineHeight;
         [self resetBottomLineViewLocation:NO completion:nil];
+    }
+}
+
+- (void)setLeftMargin:(CGFloat)leftMargin
+{
+    if (_leftMargin != leftMargin) {
+        _leftMargin = leftMargin;
+        [self resetLayout];
+    }
+}
+
+- (void)setRightMargin:(CGFloat)rightMargin
+{
+    if (_rightMargin != rightMargin) {
+        _rightMargin = rightMargin;
+        [self resetLayout];
     }
 }
 
