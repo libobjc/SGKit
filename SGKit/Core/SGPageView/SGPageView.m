@@ -83,7 +83,7 @@
         [obj removeFromSuperview];
     }];
     self.pages = nil;
-    [self.pageTitleView removeFromSuperview];
+    self.pageTitleView = nil;
     
     self.numberOfPage = [self.delegate numberOfPagesInPageView:self];
     NSMutableArray <UIView *> * pagesTemp = [NSMutableArray arrayWithCapacity:self.numberOfPage];
