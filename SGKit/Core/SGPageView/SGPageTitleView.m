@@ -11,6 +11,12 @@
 
 static CGFloat const SGPageTitleWidth = 80;
 
+@interface SGPageTitleItem ()
+
+@property (nonatomic, assign) BOOL selected;
+
+@end
+
 @interface SGPageTitleView () <UIScrollViewDelegate>
 
 @property (nonatomic, assign) BOOL didLoadData;
@@ -66,8 +72,10 @@ static CGFloat const SGPageTitleWidth = 80;
 {
     [self.titleItems enumerateObjectsUsingBlock:^(SGPageTitleItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (self.pageView.index == idx) {
+            obj.selected = YES;
             [obj selectedStyle];
         } else {
+            obj.selected = NO;
             [obj normalStyle];
         }
     }];
