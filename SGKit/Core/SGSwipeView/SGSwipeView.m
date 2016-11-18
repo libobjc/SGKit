@@ -60,6 +60,7 @@
     [self.pageView.pageTitleView removeFromSuperview];
     [self clearScrollViews];
     
+    self.contentViewTopDistant = 0;
     self.pageView = [self.delegate pageViewInSwipeView:self];
     [self addSubview:self.pageView];
     self.headerView = [self.delegate headerViewInSwipeView:self];
