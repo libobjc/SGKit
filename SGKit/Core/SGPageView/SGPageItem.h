@@ -7,11 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@protocol SGPageItemDelegate <NSObject>
-@optional
-- (UIScrollView *)scrollViewInPageItem:(UIView *)pageItem;
-@end
+#import "SGPageView.h"
 
 @interface SGPageItem : UIView <SGPageItemDelegate>
 

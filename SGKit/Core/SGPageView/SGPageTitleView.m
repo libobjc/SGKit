@@ -9,8 +9,6 @@
 #import "SGPageTitleView.h"
 #import "SGPageView.h"
 
-static CGFloat const SGPageTitleWidth = 80;
-
 @interface SGPageTitleItem ()
 
 @property (nonatomic, assign) BOOL selected;
@@ -90,8 +88,6 @@ static CGFloat const SGPageTitleWidth = 80;
     }];
     self.titleItems = nil;
     
-    NSMutableArray <UIView *> * titleViewsTemp = [NSMutableArray arrayWithCapacity:self.pageView.numberOfPage];
-    
     NSMutableArray <SGPageTitleItem *> * titleItemsTemp = [NSMutableArray arrayWithCapacity:self.pageView.numberOfPage];
     for (NSInteger i = 0; i < self.pageView.numberOfPage; i++) {
         SGPageTitleItem * item = [self.pageView.delegate pageView:self.pageView pageTitleView:self titleItemAtIndex:i];
@@ -111,7 +107,7 @@ static CGFloat const SGPageTitleWidth = 80;
 
 - (void)pageTitleItemTapAction:(UITapGestureRecognizer *)tap
 {
-    [self.pageView scrollToIndex:[self.titleItems indexOfObject:tap.view]];
+    [self.pageView scrollToIndex:[self.titleItems indexOfObject:(SGPageTitleItem *)tap.view]];
 }
 
 - (void)layoutSubviews
@@ -175,7 +171,7 @@ static CGFloat const SGPageTitleWidth = 80;
         CGRect frame = [self.titleItems objectAtIndex:self.pageView.index].frame;
         CGFloat centerX = frame.origin.x + frame.size.width / 2;
         CGFloat halfWidth = self.scrollView.frame.size.width / 2;
-        CGPoint point;
+        CGPoint point = CGPointZero;
         if (centerX >= halfWidth && centerX <= (self.scrollView.contentSize.width - halfWidth)) {
             point = CGPointMake(centerX - halfWidth, 0);
         } else if (centerX > (self.scrollView.contentSize.width - halfWidth)) {

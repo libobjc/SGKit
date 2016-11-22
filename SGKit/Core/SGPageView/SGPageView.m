@@ -7,6 +7,7 @@
 //
 
 #import "SGPageView.h"
+#import "SGPageItem.h"
 
 @interface SGPageTitleView ()
 
@@ -86,9 +87,9 @@
     self.pageTitleView = nil;
     
     self.numberOfPage = [self.delegate numberOfPagesInPageView:self];
-    NSMutableArray <UIView *> * pagesTemp = [NSMutableArray arrayWithCapacity:self.numberOfPage];
+    NSMutableArray <UIView <SGPageItemDelegate> *> * pagesTemp = [NSMutableArray arrayWithCapacity:self.numberOfPage];
     for (NSInteger i = 0; i < self.numberOfPage; i++) {
-        UIView * view = [self.delegate pageView:self viewAtIndex:i];
+        UIView <SGPageItemDelegate> * view = [self.delegate pageView:self viewAtIndex:i];
         [pagesTemp addObject:view];
         [self.scrollView addSubview:view];
     }
@@ -109,7 +110,7 @@
 - (NSArray <UIScrollView *> *)fetchScrollViews
 {
     NSMutableArray <UIScrollView *> * scrollViewsTemp = [NSMutableArray arrayWithCapacity:self.numberOfPage];
-    NSMutableArray <UIView <SGPageViewDelegate> *> * pagesTemp = [NSMutableArray arrayWithCapacity:self.numberOfPage];
+    NSMutableArray <UIView <SGPageItemDelegate> *> * pagesTemp = [NSMutableArray arrayWithCapacity:self.numberOfPage];
     [self.pages enumerateObjectsUsingBlock:^(UIView <SGPageItemDelegate> * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
         UIScrollView * scrollView;

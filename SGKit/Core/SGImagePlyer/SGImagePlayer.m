@@ -239,7 +239,7 @@ static CGFloat const SGImagePlayerPageControlHeight = 25;
 - (void)refreshPageNumber
 {
     self.pageNumber.hidden = self.numberOfImage <= 1;
-    self.pageNumber.text = [NSString stringWithFormat:@"%ld/%ld", self.currentImage + 1, self.numberOfImage];
+    self.pageNumber.text = [NSString stringWithFormat:@"%ld/%ld", (long)self.currentImage + 1, (long)self.numberOfImage];
 }
 
 - (void)refreshPageControlPosition

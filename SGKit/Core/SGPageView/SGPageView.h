@@ -7,16 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SGPageItem.h"
 #import "SGPageTitleView.h"
 #import "SGPageTitleItem.h"
 
 @class SGPageView;
 
+@protocol SGPageItemDelegate <NSObject>
+@optional
+- (UIScrollView *)scrollViewInPageItem:(UIView *)pageItem;
+@end
+
 @protocol SGPageViewDelegate <NSObject>
 
 - (NSInteger)numberOfPagesInPageView:(SGPageView *)pageView;
-- (UIView *)pageView:(SGPageView *)pageView viewAtIndex:(NSInteger)index;
+- (UIView <SGPageItemDelegate> *)pageView:(SGPageView *)pageView viewAtIndex:(NSInteger)index;
 - (void)pageView:(SGPageView *)pageView didScrollToIndex:(NSInteger)index;
 
 @optional
