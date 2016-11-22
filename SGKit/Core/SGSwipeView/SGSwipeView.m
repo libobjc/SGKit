@@ -164,8 +164,8 @@
             if (contentHeight < CGRectGetHeight(self.currentScrollView.frame)) {
                 contentHeight = CGRectGetHeight(self.currentScrollView.frame);
             }
-            CGFloat oldOffsetY          = [change[NSKeyValueChangeOldKey] CGPointValue].y;
-            CGFloat newOffsetY          = [change[NSKeyValueChangeNewKey] CGPointValue].y;
+            CGFloat oldOffsetY = [change[NSKeyValueChangeOldKey] CGPointValue].y;
+            CGFloat newOffsetY = [change[NSKeyValueChangeNewKey] CGPointValue].y;
             
             if (oldOffsetY == newOffsetY) return;
             if (oldOffsetY > contentHeight && newOffsetY > contentHeight) return;
