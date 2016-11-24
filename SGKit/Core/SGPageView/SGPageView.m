@@ -76,6 +76,8 @@
     [self prepareData];
     [self resetLayout];
     [self.pageTitleView reloadData];
+    
+    
 }
 
 - (void)prepareData
@@ -99,7 +101,8 @@
     if (self.defaultIndex >= self.numberOfPage) {
         index = self.numberOfPage - 1 >= 0 ? self.numberOfPage - 1 : 0;
     }
-    self.index = index;
+    _index = index;
+    [self didScrollToIndexCallBack];
     
     if ([self.delegate respondsToSelector:@selector(pageTitleViewInPageView:)]) {
         self.pageTitleView = [self.delegate pageTitleViewInPageView:self];
@@ -169,10 +172,15 @@
 {
     if (_index != index) {
         _index = index;
-        if (self.numberOfPage > index || [self.delegate respondsToSelector:@selector(pageView:didScrollToIndex:)]) {
-            [self.delegate pageView:self didScrollToIndex:index];
-            [self.pageTitleView scrollToIndex:index];
-        }
+        [self didScrollToIndexCallBack];
+    }
+}
+
+- (void)didScrollToIndexCallBack
+{
+    if (self.numberOfPage > self.index || [self.delegate respondsToSelector:@selector(pageView:didScrollToIndex:)]) {
+        [self.delegate pageView:self didScrollToIndex:self.index];
+        [self.pageTitleView scrollToIndex:self.index];
     }
 }
 
