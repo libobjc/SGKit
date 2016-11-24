@@ -76,8 +76,6 @@
     [self prepareData];
     [self resetLayout];
     [self.pageTitleView reloadData];
-    
-    
 }
 
 - (void)prepareData
