@@ -47,7 +47,7 @@
 - (void)UILayout
 {
     self.backgroundColor = [UIColor whiteColor];
-    [self addSubview:self.scrollView];
+    [self insertSubview:self.scrollView atIndex:0];
     
     self.bottomLineHeight = 3;
     self.bottomLineColor = [UIColor redColor];
@@ -218,6 +218,7 @@
         _showBottomLine = showBottomLine;
         if (showBottomLine && !self.bottomLineView) {
             self.bottomLineView = [[UIView alloc] initWithFrame:CGRectZero];
+            self.bottomLineView.backgroundColor = self.bottomLineColor;
             [self.scrollView addSubview:self.bottomLineView];
             [self resetBottomLineViewLocation:NO completion:nil];
         } else {
@@ -249,6 +250,7 @@
         _showBottomBoard = showBottomBoard;
         if (showBottomBoard && !self.bottomBoardView) {
             self.bottomBoardView = [[UIView alloc] initWithFrame:CGRectZero];
+            self.bottomBoardView.backgroundColor = self.bottomBoardColor;
             [self addSubview:self.bottomBoardView];
             [self resetBottomBoardViewLayout];
         } else {
