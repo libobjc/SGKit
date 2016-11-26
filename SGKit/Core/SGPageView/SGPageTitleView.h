@@ -18,8 +18,12 @@
 @property (nonatomic, assign) CGFloat rightMargin;  // default is 0
 
 @property (nonatomic, assign) BOOL showBottomLine;  // default is NO
-@property (nonatomic, assign) CGFloat bottomLineHeight;     // default is 2
+@property (nonatomic, assign) CGFloat bottomLineHeight;     // default is 3
 @property (nonatomic, copy) UIColor * bottomLineColor;      // default is red;
 @property (nonatomic, assign) CGFloat bottomLineAnimatedDuration;       // default is 0.25s
+
+@property (nonatomic, assign) BOOL showBottomBoard;     // default is NO
+@property (nonatomic, assign) CGFloat bottomBoardHeight;        // default is 1
+@property (nonatomic, copy) UIColor * bottomBoardColor;     // default is red;
 
 @end

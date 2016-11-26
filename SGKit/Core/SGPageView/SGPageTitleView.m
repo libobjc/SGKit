@@ -22,6 +22,7 @@
 @property (nonatomic, strong) UIScrollView * scrollView;
 @property (nonatomic, strong) NSArray <SGPageTitleItem *> * titleItems;
 @property (nonatomic, strong) UIView * bottomLineView;
+@property (nonatomic, strong) UIView * bottomBoardView;
 
 @end
 
@@ -48,9 +49,12 @@
     self.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.scrollView];
     
-    self.bottomLineHeight = 2;
+    self.bottomLineHeight = 3;
     self.bottomLineColor = [UIColor redColor];
     self.bottomLineAnimatedDuration = 0.25;
+    
+    self.bottomBoardHeight = 1;
+    self.bottomBoardColor = [UIColor redColor];
 }
 
 - (void)scrollToIndex:(NSInteger)index
@@ -114,6 +118,7 @@
 {
     [super layoutSubviews];
     [self resetLayout];
+    [self resetBottomBoardViewLayout];
 }
 
 - (void)resetLayout
@@ -130,6 +135,11 @@
     
     self.scrollView.contentSize = CGSizeMake(left + self.rightMargin, CGRectGetHeight(self.bounds));
     [self scrollToIndex:self.pageView.index animated:NO];
+}
+
+- (void)resetBottomBoardViewLayout
+{
+    self.bottomBoardView.frame = CGRectMake(0, CGRectGetHeight(self.frame) - self.bottomBoardHeight, CGRectGetWidth(self.frame), self.bottomBoardHeight);
 }
 
 - (void)resetBottomLineViewLocation:(BOOL)animated completion:(void (^)(BOOL finished))completion
@@ -188,21 +198,6 @@
     }
 }
 
-- (void)setupBottomLineView
-{
-    if (self.showBottomLine) {
-        if (!self.bottomLineView) {
-            self.bottomLineView = [[UIView alloc] initWithFrame:CGRectZero];
-            [self.scrollView addSubview:self.bottomLineView];
-        }
-        self.bottomLineView.backgroundColor = self.bottomLineColor;
-        [self resetBottomLineViewLocation:NO completion:nil];
-    } else {
-        [self.bottomLineView removeFromSuperview];
-        self.bottomLineView = nil;
-    }
-}
-
 - (UIScrollView *)scrollView
 {
     if (_scrollView == nil) {
@@ -221,7 +216,14 @@
 {
     if (_showBottomLine != showBottomLine) {
         _showBottomLine = showBottomLine;
-        [self setupBottomLineView];
+        if (showBottomLine && !self.bottomLineView) {
+            self.bottomLineView = [[UIView alloc] initWithFrame:CGRectZero];
+            [self.scrollView addSubview:self.bottomLineView];
+            [self resetBottomLineViewLocation:NO completion:nil];
+        } else {
+            [self.bottomLineView removeFromSuperview];
+            self.bottomLineView = nil;
+        }
     }
 }
 
@@ -229,7 +231,7 @@
 {
     if (_bottomLineColor != bottomLineColor) {
         _bottomLineColor = bottomLineColor;
-        [self setupBottomLineView];
+        self.bottomLineView.backgroundColor = bottomLineColor;
     }
 }
 
@@ -238,6 +240,37 @@
     if (_bottomLineHeight != bottomLineHeight) {
         _bottomLineHeight = bottomLineHeight;
         [self resetBottomLineViewLocation:NO completion:nil];
+    }
+}
+
+- (void)setShowBottomBoard:(BOOL)showBottomBoard
+{
+    if (_showBottomBoard != showBottomBoard) {
+        _showBottomBoard = showBottomBoard;
+        if (showBottomBoard && !self.bottomBoardView) {
+            self.bottomBoardView = [[UIView alloc] initWithFrame:CGRectZero];
+            [self addSubview:self.bottomBoardView];
+            [self resetBottomBoardViewLayout];
+        } else {
+            [self.bottomBoardView removeFromSuperview];
+            self.bottomBoardView = nil;
+        }
+    }
+}
+
+- (void)setBottomBoardColor:(UIColor *)bottomBoardColor
+{
+    if (_bottomBoardColor != bottomBoardColor) {
+        _bottomBoardColor = bottomBoardColor;
+        self.bottomBoardView.backgroundColor = bottomBoardColor;
+    }
+}
+
+- (void)setBottomBoardHeight:(CGFloat)bottomBoardHeight
+{
+    if (_bottomBoardHeight != bottomBoardHeight) {
+        _bottomBoardHeight = bottomBoardHeight;
+        [self resetBottomBoardViewLayout];
     }
 }
 
