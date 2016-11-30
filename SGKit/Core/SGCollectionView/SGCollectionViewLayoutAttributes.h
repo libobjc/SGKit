@@ -11,5 +11,6 @@
 @interface SGCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes
 
 @property (nonatomic, strong) UIColor * color;
+@property (nonatomic, strong) UIView * backgroundView;
 
 @end

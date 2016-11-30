@@ -10,8 +10,11 @@
 @class SGCollectionViewFlowLayout;
 
 @protocol SGCollectionViewDelegateFlowLayout <UICollectionViewDelegateFlowLayout>
+
 @optional
 - (UIColor *)collectionView:(UICollectionView *)collectionView layout:(SGCollectionViewFlowLayout *)collectionViewLayout backgroundColorForSectionAtIndex:(NSInteger)section;
+- (UIView *)collectionView:(UICollectionView *)collectionView layout:(SGCollectionViewFlowLayout *)collectionViewLayout backgroundViewForSectionAtIndex:(NSInteger)section;
+
 @end
 
 // 不支持 collectionView delete/insert 操作，会导致未知错误

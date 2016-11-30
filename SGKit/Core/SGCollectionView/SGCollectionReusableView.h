@@ -10,4 +10,6 @@
 
 @interface SGCollectionReusableView : UICollectionReusableView
 
+@property (nonatomic, strong) UIView * backgroundView;
+
 @end

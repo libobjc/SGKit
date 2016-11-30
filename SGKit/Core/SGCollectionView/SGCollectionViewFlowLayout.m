@@ -64,7 +64,10 @@ static NSString * const DecorationReuseIdentifier = @"DecorationReuseIdentifier"
         SGCollectionViewLayoutAttributes * attributes = [SGCollectionViewLayoutAttributes layoutAttributesForDecorationViewOfKind:DecorationReuseIdentifier withIndexPath:[NSIndexPath indexPathForItem:0 inSection:i]];
         attributes.frame = sectionFrame;
         attributes.zIndex = -1;
-        attributes.color = [(id <SGCollectionViewDelegateFlowLayout>)self.collectionView.delegate collectionView:self.collectionView layout:self backgroundColorForSectionAtIndex:0];
+        attributes.color = [(id <SGCollectionViewDelegateFlowLayout>)self.collectionView.delegate collectionView:self.collectionView layout:self backgroundColorForSectionAtIndex:i];
+        if ([self.collectionView.delegate respondsToSelector:@selector(collectionView:layout:backgroundViewForSectionAtIndex:)]) {
+            attributes.backgroundView = [(id <SGCollectionViewDelegateFlowLayout>)self.collectionView.delegate collectionView:self.collectionView layout:self backgroundViewForSectionAtIndex:i];
+        }
         [self.decorationAttributesArray addObject:attributes];
     }
 }

@@ -14,6 +14,7 @@
 {
     SGCollectionViewLayoutAttributes * obj = [super copyWithZone:zone];
     obj.color = [self.color copyWithZone:zone];
+    obj.backgroundView = self.backgroundView;
     return obj;
 }
 
