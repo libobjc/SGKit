@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C1E3B851DF02BD800747C56 /* NSString+SGSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C1E3B831DF02BD800747C56 /* NSString+SGSize.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C1E3B861DF02BD800747C56 /* NSString+SGSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C1E3B841DF02BD800747C56 /* NSString+SGSize.m */; };
 		9C5BEA8F1DCDEFCF00385153 /* SGKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C5BEA8D1DCDEFCF00385153 /* SGKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9C5C542D1DDEE5D80066C389 /* SGSwipeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C5C542B1DDEE5D80066C389 /* SGSwipeView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9C5C542E1DDEE5D80066C389 /* SGSwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C542C1DDEE5D80066C389 /* SGSwipeView.m */; };
@@ -38,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C1E3B831DF02BD800747C56 /* NSString+SGSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SGSize.h"; sourceTree = "<group>"; };
+		9C1E3B841DF02BD800747C56 /* NSString+SGSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SGSize.m"; sourceTree = "<group>"; };
 		9C5BEA8A1DCDEFCF00385153 /* SGKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SGKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C5BEA8D1DCDEFCF00385153 /* SGKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGKit.h; sourceTree = "<group>"; };
 		9C5BEA8E1DCDEFCF00385153 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -188,6 +192,8 @@
 				9CCE87631DCF6E4E00B62C21 /* UIViewController+SGExtension.m */,
 				9CCE87661DCF765000B62C21 /* UIScreen+SGExtension.h */,
 				9CCE87671DCF765000B62C21 /* UIScreen+SGExtension.m */,
+				9C1E3B831DF02BD800747C56 /* NSString+SGSize.h */,
+				9C1E3B841DF02BD800747C56 /* NSString+SGSize.m */,
 			);
 			path = SGCategory;
 			sourceTree = "<group>";
@@ -200,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C5BEA8F1DCDEFCF00385153 /* SGKit.h in Headers */,
+				9C1E3B851DF02BD800747C56 /* NSString+SGSize.h in Headers */,
 				9CE66AED1DCEF60500C4ED11 /* UIColor+SGExtension.h in Headers */,
 				9CCE87681DCF765000B62C21 /* UIScreen+SGExtension.h in Headers */,
 				9CCE87641DCF6E4E00B62C21 /* UIViewController+SGExtension.h in Headers */,
@@ -290,6 +297,7 @@
 				9CD17A411DDD940D00C2A834 /* SGPageView.m in Sources */,
 				9CD17A151DDD4AFC00C2A834 /* SGImagePlayer.m in Sources */,
 				9C5C54391DDF06780066C389 /* SGPageItem.m in Sources */,
+				9C1E3B861DF02BD800747C56 /* NSString+SGSize.m in Sources */,
 				9CDD5F481DCE30B200AB7057 /* SGCollectionReusableView.m in Sources */,
 				9CDD5F4C1DCE30B200AB7057 /* SGCollectionViewLayoutAttributes.m in Sources */,
 				9CCE87691DCF765000B62C21 /* UIScreen+SGExtension.m in Sources */,

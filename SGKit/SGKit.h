@@ -21,6 +21,7 @@ FOUNDATION_EXPORT const unsigned char SGKitVersionString[];     // version strin
 #import <SGKit/SGCollectionViewFlowLayout.h>
 
 // categroy
+#import <SGKit/NSString+SGSize.h>
 #import <SGKit/UIColor+SGExtension.h>
 #import <SGKit/UIViewController+SGExtension.h>
 #import <SGKit/UIScreen+SGExtension.h>
