@@ -14,6 +14,8 @@
 		9C5C542E1DDEE5D80066C389 /* SGSwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C542C1DDEE5D80066C389 /* SGSwipeView.m */; };
 		9C5C54381DDF06780066C389 /* SGPageItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C5C54361DDF06780066C389 /* SGPageItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9C5C54391DDF06780066C389 /* SGPageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C54371DDF06780066C389 /* SGPageItem.m */; };
+		9C87B2911E07B9F600B92A98 /* SGTransformView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C87B28F1E07B9F600B92A98 /* SGTransformView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C87B2921E07B9F600B92A98 /* SGTransformView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C87B2901E07B9F600B92A98 /* SGTransformView.m */; };
 		9CCE87641DCF6E4E00B62C21 /* UIViewController+SGExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CCE87621DCF6E4E00B62C21 /* UIViewController+SGExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CCE87651DCF6E4E00B62C21 /* UIViewController+SGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCE87631DCF6E4E00B62C21 /* UIViewController+SGExtension.m */; };
 		9CCE87681DCF765000B62C21 /* UIScreen+SGExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CCE87661DCF765000B62C21 /* UIScreen+SGExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -49,6 +51,8 @@
 		9C5C542C1DDEE5D80066C389 /* SGSwipeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSwipeView.m; sourceTree = "<group>"; };
 		9C5C54361DDF06780066C389 /* SGPageItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPageItem.h; sourceTree = "<group>"; };
 		9C5C54371DDF06780066C389 /* SGPageItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPageItem.m; sourceTree = "<group>"; };
+		9C87B28F1E07B9F600B92A98 /* SGTransformView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGTransformView.h; sourceTree = "<group>"; };
+		9C87B2901E07B9F600B92A98 /* SGTransformView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGTransformView.m; sourceTree = "<group>"; };
 		9CCE87621DCF6E4E00B62C21 /* UIViewController+SGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SGExtension.h"; sourceTree = "<group>"; };
 		9CCE87631DCF6E4E00B62C21 /* UIViewController+SGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SGExtension.m"; sourceTree = "<group>"; };
 		9CCE87661DCF765000B62C21 /* UIScreen+SGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+SGExtension.h"; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 		9C5BEACD1DCDF07600385153 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				9C87B28E1E07B9E600B92A98 /* SGTransform */,
 				9C5C542A1DDEE5C70066C389 /* SGSwipeView */,
 				9CD17A3D1DDD93D600C2A834 /* SGPageView */,
 				9CD17A111DDD4AFC00C2A834 /* SGImagePlyer */,
@@ -134,6 +139,15 @@
 				9C5C542C1DDEE5D80066C389 /* SGSwipeView.m */,
 			);
 			path = SGSwipeView;
+			sourceTree = "<group>";
+		};
+		9C87B28E1E07B9E600B92A98 /* SGTransform */ = {
+			isa = PBXGroup;
+			children = (
+				9C87B28F1E07B9F600B92A98 /* SGTransformView.h */,
+				9C87B2901E07B9F600B92A98 /* SGTransformView.m */,
+			);
+			path = SGTransform;
 			sourceTree = "<group>";
 		};
 		9CD17A111DDD4AFC00C2A834 /* SGImagePlyer */ = {
@@ -216,6 +230,7 @@
 				9C5C542D1DDEE5D80066C389 /* SGSwipeView.h in Headers */,
 				9C5C54381DDF06780066C389 /* SGPageItem.h in Headers */,
 				9CD17A4C1DDDB9D200C2A834 /* SGPageTitleItem.h in Headers */,
+				9C87B2911E07B9F600B92A98 /* SGTransformView.h in Headers */,
 				9CD17A481DDDA56700C2A834 /* SGPageTitleView.h in Headers */,
 				9CDD5F471DCE30B200AB7057 /* SGCollectionReusableView.h in Headers */,
 				9CDD5F4B1DCE30B200AB7057 /* SGCollectionViewLayoutAttributes.h in Headers */,
@@ -292,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CD17A491DDDA56700C2A834 /* SGPageTitleView.m in Sources */,
+				9C87B2921E07B9F600B92A98 /* SGTransformView.m in Sources */,
 				9CDD5F4A1DCE30B200AB7057 /* SGCollectionViewFlowLayout.m in Sources */,
 				9CD17A4D1DDDB9D200C2A834 /* SGPageTitleItem.m in Sources */,
 				9CD17A411DDD940D00C2A834 /* SGPageView.m in Sources */,
