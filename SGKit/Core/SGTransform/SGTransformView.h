@@ -31,8 +31,9 @@ extern CGFloat const TranslateControlViewHeight;
 
 @property (nonatomic, weak) id <SGTransformViewDelegate> delegate;
 @property (nonatomic, strong, readonly) UIView * contentView;
-@property (nonatomic, strong, readonly) UIView * translateControlView;     // defalut wdith is TranslateViewWidth, default height is TranslateViewHeight.
+@property (nonatomic, strong, readonly) UIView * translateControlView;
 @property (nonatomic, assign) BOOL translateControlEnable;     // default is YES;
+@property (nonatomic, assign) CGSize translateControlViewSize;  // defalut wdith is TranslateViewWidth, default height is TranslateViewHeight.
 
 @property (nonatomic, assign) CGFloat aspect;       // if frame.size is't CGRectZero whern init, defalut value is width/height, else default value is equal to translateView's width/height.
 @property (nonatomic, assign) CGSize minSize;       // default is equal to translateView's size.

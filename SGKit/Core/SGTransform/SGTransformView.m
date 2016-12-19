@@ -37,14 +37,13 @@ CGFloat const TranslateControlViewHeight = TranslateControlViewWidth;
 
 - (void)setup
 {
-    CGFloat width = CGRectGetWidth(self.frame);
-    CGFloat height = CGRectGetHeight(self.frame);
-    if (width > 0 && height > 0) {
-        self.aspect = width / height;
+    if (CGRectGetWidth(self.frame) > 0 && CGRectGetHeight(self.frame) > 0) {
+        self.aspect = CGRectGetWidth(self.frame) / CGRectGetHeight(self.frame);
     } else {
         self.aspect = TranslateControlViewWidth / TranslateControlViewHeight;
     }
-    self.minSize = CGSizeMake(TranslateControlViewWidth, TranslateControlViewWidth);
+    self.translateControlViewSize = CGSizeMake(TranslateControlViewWidth, TranslateControlViewHeight);
+    self.minSize = self.translateControlViewSize;
     self.translateControlEnable = YES;
     
     [self superUILayout];
@@ -56,7 +55,12 @@ CGFloat const TranslateControlViewHeight = TranslateControlViewWidth;
     self.contentView = [[UIView alloc] initWithFrame:self.bounds];
     [self addSubview:self.contentView];
     
-    self.translateControlView = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.frame) - TranslateControlViewWidth, CGRectGetHeight(self.frame) - TranslateControlViewHeight, TranslateControlViewWidth, TranslateControlViewHeight)];
+    self.translateControlView = [[UIView alloc] initWithFrame:CGRectMake(
+                                                                         CGRectGetWidth(self.frame) - self.translateControlViewSize.width,
+                                                                         CGRectGetHeight(self.frame) - self.translateControlViewSize.height,
+                                                                         self.translateControlViewSize.width,
+                                                                         self.translateControlViewSize.height
+                                                                         )];
     self.translateControlView.backgroundColor = [UIColor cyanColor];
     [self addSubview:self.translateControlView];
 }
@@ -94,8 +98,8 @@ CGFloat const TranslateControlViewHeight = TranslateControlViewWidth;
             CGPoint location = [pan locationInView:self.superview];
             
             CGPoint point = CGPointMake(
-                                        CGRectGetWidth(self.translateControlView.frame) - self.translateStartPoint.x + location.x,
-                                        CGRectGetHeight(self.translateControlView.frame) - self.translateStartPoint.y + location.y
+                                        self.translateControlViewSize.width - self.translateStartPoint.x + location.x,
+                                        self.translateControlViewSize.height - self.translateStartPoint.y + location.y
                                         );
             
             CGPoint center = self.translateStartCenter;
@@ -115,6 +119,7 @@ CGFloat const TranslateControlViewHeight = TranslateControlViewWidth;
                     frame = [self.delegate transformView:self needChangeFrameByTranslateAction:frame currentTransform:self.transform];
                 }
                 
+                self.transform = CGAffineTransformMakeRotation(0);
                 self.frame = frame;
             }
             
@@ -235,7 +240,12 @@ CGFloat const TranslateControlViewHeight = TranslateControlViewWidth;
     CGFloat height = CGRectGetHeight(self.frame);
     
     self.contentView.frame = self.bounds;
-    self.translateControlView.frame = CGRectMake(width - TranslateControlViewWidth, height - TranslateControlViewHeight, TranslateControlViewWidth, TranslateControlViewHeight);
+    self.translateControlView.frame = CGRectMake(
+                                                 width - self.translateControlViewSize.width,
+                                                 height - self.translateControlViewSize.height,
+                                                 self.translateControlViewSize.width,
+                                                 self.translateControlViewSize.height
+                                                 );
     
     self.aspect = width / height;
     
@@ -248,6 +258,23 @@ CGFloat const TranslateControlViewHeight = TranslateControlViewWidth;
     self.transform = CGAffineTransformMakeRotation(0);
     [super setFrame:frame];
     self.transform = transform;
+}
+
+- (void)setTranslateControlViewSize:(CGSize)translateControlViewSize
+{
+    if (!CGSizeEqualToSize(_translateControlViewSize, translateControlViewSize)) {
+        _translateControlViewSize = translateControlViewSize;
+        
+        CGAffineTransform transform = self.transform;
+        self.transform = CGAffineTransformMakeRotation(0);
+        self.translateControlView.frame = CGRectMake(
+                                                     CGRectGetWidth(self.frame) - _translateControlViewSize.width,
+                                                     CGRectGetHeight(self.frame) - _translateControlViewSize.height,
+                                                     _translateControlViewSize.width,
+                                                     _translateControlViewSize.height
+                                                     );
+        self.transform = transform;
+    }
 }
 
 @end
