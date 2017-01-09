@@ -20,6 +20,7 @@ FOUNDATION_EXPORT const unsigned char SGKitVersionString[];     // version strin
 #import <SGKit/SGPageTitleItem.h>
 #import <SGKit/SGImagePlayer.h>
 #import <SGKit/SGCollectionViewFlowLayout.h>
+#import <SGKit/SGGuideView.h>
 
 // categroy
 #import <SGKit/NSString+SGSize.h>
