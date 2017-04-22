@@ -14,7 +14,7 @@
 
 @protocol SGPageItemDelegate <NSObject>
 @optional
-- (UIScrollView *)scrollViewInPageItem:(UIView *)pageItem;
+- (UIScrollView *)scrollViewInPageItem:(UIView *)pageItem;  // if not implemented automatically created.
 @end
 
 @protocol SGPageViewDelegate <NSObject>

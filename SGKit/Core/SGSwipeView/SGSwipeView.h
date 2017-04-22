@@ -19,7 +19,6 @@
 
 @optional
 - (CGFloat)pageTitleViewHeightInSwipeView:(SGSwipeView *)swipeView;
-- (CGFloat)topMarginInSwipeView:(SGSwipeView *)swipeView;
 - (void)swipeView:(SGSwipeView *)swipeView didChangeOffsetScale:(CGFloat)scale;
 
 @end
@@ -31,7 +30,7 @@
 @property (nonatomic, strong, readonly) UIView * headerView;
 @property (nonatomic, assign, readonly) CGFloat headerViewHeight;
 @property (nonatomic, assign, readonly) CGFloat pageTitleViewHeight;
-@property (nonatomic, assign, readonly) CGFloat topMargin;
+@property (nonatomic, assign) CGFloat topMargin;
 
 - (void)reloadData;
 

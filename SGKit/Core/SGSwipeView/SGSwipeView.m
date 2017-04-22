@@ -22,7 +22,6 @@
 @property (nonatomic, strong) UIView * headerView;
 @property (nonatomic, assign) CGFloat headerViewHeight;
 @property (nonatomic, assign) CGFloat pageTitleViewHeight;
-@property (nonatomic, assign) CGFloat topMargin;
 
 @property (nonatomic, strong) NSArray <UIScrollView *> * scrollViews;
 @property (nonatomic, strong) UIScrollView * currentScrollView;
@@ -70,12 +69,6 @@
     self.headerView = [self.delegate headerViewInSwipeView:self];
     [self addSubview:self.headerView];
     self.headerViewHeight = [self.delegate headerViewHeightInSwipeView:self];
-    if ([self.delegate respondsToSelector:@selector(topMarginInSwipeView:)]) {
-        self.topMargin = [self.delegate topMarginInSwipeView:self];
-        if (self.topMargin < 0) self.topMargin = 0;
-    } else {
-        self.topMargin = 0;
-    }
     [self.pageView reloadData];
     if (self.pageView.pageTitleView) {
         [self addSubview:self.pageView.pageTitleView];
@@ -93,6 +86,16 @@
     self.scrollViews = scrollViewsTemp;
     
     [self resetLayout];
+}
+
+- (void)setTopMargin:(CGFloat)topMargin
+{
+    if (_topMargin != topMargin) {
+        _topMargin = topMargin;
+        if (_topMargin < 0) {
+            _topMargin = 0;
+        }
+    }
 }
 
 - (void)clearScrollViews

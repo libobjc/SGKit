@@ -42,7 +42,8 @@
 
 - (void)setup
 {
-    self.backgroundColor =[UIColor whiteColor];
+    self.backgroundColor =[UIColor clearColor];
+    self.imageViewsContentMode = UIViewContentModeScaleAspectFill;
     
     [self addSubview:self.scrollView];
     [self addSubview:self.pageControl];
@@ -71,6 +72,7 @@
 {
     if (!_backgroundImageView) {
         _backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        _backgroundImageView.backgroundColor = [UIColor clearColor];
         [self insertSubview:_backgroundImageView atIndex:0];
     }
     return _backgroundImageView;
@@ -81,6 +83,7 @@
     if (!_scrollView) {
         _scrollView = [[UIScrollView alloc] initWithFrame:CGRectZero];
         
+        _scrollView.backgroundColor = [UIColor clearColor];
         _scrollView.pagingEnabled = YES;
         _scrollView.showsHorizontalScrollIndicator = NO;
         _scrollView.showsVerticalScrollIndicator = NO;
@@ -96,6 +99,7 @@
     if (!_pageControl) {
         _pageControl = [[UIPageControl alloc] initWithFrame:CGRectZero];
         
+        _pageControl.backgroundColor = [UIColor clearColor];
         _pageControl.numberOfPages = self.imageNames.count;
         _pageControl.userInteractionEnabled = NO;
         _pageControl.currentPage = 0;
@@ -114,6 +118,16 @@
     return self.pageControl.hidden;
 }
 
+- (void)setImageViewsContentMode:(UIViewContentMode)imageViewsContentMode
+{
+    if (_imageViewsContentMode != imageViewsContentMode) {
+        _imageViewsContentMode = imageViewsContentMode;
+        [self.imageViews enumerateObjectsUsingBlock:^(UIImageView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            obj.contentMode = _imageViewsContentMode;
+        }];
+    }
+}
+
 - (NSArray<UIImageView *> *)imageViews
 {
     if (!_imageViews) {
@@ -121,7 +135,9 @@
         for (int i = 0; i < self.imageNames.count; i++)
         {
             UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-            imageView.contentMode = UIViewContentModeScaleAspectFill;
+            
+            imageView.backgroundColor = [UIColor whiteColor];
+            imageView.contentMode = self.imageViewsContentMode;
             imageView.image = [UIImage imageNamed:[self.imageNames objectAtIndex:i]];
             imageView.clipsToBounds = YES;
             
@@ -157,11 +173,17 @@
 - (void)touchesLastImage
 {
     dispatch_once(&onceToken, ^{
+        if ([self.delegate respondsToSelector:@selector(guideViewWillDisapper:)]) {
+            [self.delegate guideViewWillDisapper:self];
+        }
         [UIView animateWithDuration:1.0f animations:^{
             self.alpha = 0.0;
         } completion:^(BOOL finished) {
             if (finished) {
                 [self removeFromSuperview];
+                if ([self.delegate respondsToSelector:@selector(guideViewDidDisapper:)]) {
+                    [self.delegate guideViewDidDisapper:self];
+                }
             }
         }];
     });
