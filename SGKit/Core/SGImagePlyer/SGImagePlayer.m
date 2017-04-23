@@ -83,7 +83,7 @@ static CGFloat const SGImagePlayerPageControlHeight = 25;
     {
         UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width * i, 0, self.frame.size.width, self.frame.size.height)];
         imageView.clipsToBounds = YES;
-        imageView.contentMode = UIViewContentModeScaleAspectFill;
+        imageView.contentMode = self.imageViewsContentMode;
         imageView.backgroundColor = [UIColor clearColor];
         imageView.userInteractionEnabled = YES;
         [self.scrllView addSubview:imageView];
@@ -457,6 +457,7 @@ static CGFloat const SGImagePlayerPageControlHeight = 25;
 - (void)UILayout
 {
     self.backgroundColor = [UIColor clearColor];
+    self.imageViewsContentMode = UIViewContentModeScaleAspectFill;
     [self addSubview:self.scrllView];
     
     self.autoScroll = YES;
@@ -500,6 +501,16 @@ static CGFloat const SGImagePlayerPageControlHeight = 25;
         } else {
             [self clearTimer];
         }
+    }
+}
+
+- (void)setImageViewsContentMode:(UIViewContentMode)imageViewsContentMode
+{
+    if (_imageViewsContentMode != imageViewsContentMode) {
+        _imageViewsContentMode = imageViewsContentMode;
+        [self.imageViews enumerateObjectsUsingBlock:^(UIImageView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            obj.contentMode = _imageViewsContentMode;
+        }];
     }
 }
 

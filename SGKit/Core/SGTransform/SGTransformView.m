@@ -7,6 +7,7 @@
 //
 
 #import "SGTransformView.h"
+#import "UIColor+SGExtension.h"
 
 CGFloat const TranslateControlViewWidth = 40;
 CGFloat const TranslateControlViewHeight = TranslateControlViewWidth;
@@ -52,6 +53,7 @@ CGFloat const TranslateControlViewHeight = TranslateControlViewWidth;
 
 - (void)superUILayout
 {
+    self.backgroundColor = [UIColor sg_colorWithRed:194 green:225 blue:200];
     self.contentView = [[UIView alloc] initWithFrame:self.bounds];
     [self addSubview:self.contentView];
     
@@ -61,7 +63,7 @@ CGFloat const TranslateControlViewHeight = TranslateControlViewWidth;
                                                                          self.translateControlViewSize.width,
                                                                          self.translateControlViewSize.height
                                                                          )];
-    self.translateControlView.backgroundColor = [UIColor cyanColor];
+    self.translateControlView.backgroundColor = [UIColor sg_colorWithRed:242 green:167 blue:151];
     [self addSubview:self.translateControlView];
 }
 

@@ -23,8 +23,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.transformView = [[SGTransformView alloc] initWithFrame:CGRectMake(50, 150, 200, 100)];
-    self.transformView.backgroundColor = [UIColor yellowColor];
+    self.transformView = [[SGTransformView alloc] initWithFrame:CGRectMake(50, 150, 240, 180)];
     self.transformView.delegate = self;
     [self.view addSubview:self.transformView];
 }

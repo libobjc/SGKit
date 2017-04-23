@@ -35,6 +35,8 @@
     self.pageView.defaultIndex = 2;
     
     self.pageTitleView = [[SGPageTitleView alloc] initWithFrame:CGRectZero];
+    self.pageTitleView.bottomLineColor = [UIColor sg_colorWithRed:242 green:167 blue:151];
+    self.pageTitleView.bottomBoardColor = [UIColor sg_colorWithRed:242 green:167 blue:151];
     self.pageTitleView.showBottomLine = YES;
     self.pageTitleView.leftMargin = 100;
     self.pageTitleView.rightMargin = 50;
@@ -82,9 +84,9 @@
 {
     SGPageTitleLabelItem * item = [[SGPageTitleLabelItem alloc] initWithFrame:CGRectZero];
     item.text = [NSString stringWithFormat:@"%ld", index];
-    item.selectedColor = [UIColor redColor];
+    item.selectedColor = [UIColor sg_colorWithRed:242 green:167 blue:151];
     item.selectedFont = [UIFont systemFontOfSize:16];
-    item.itemWidth = arc4random()%100 + 50;
+    item.itemWidth = 100;
     return item;
 }
 

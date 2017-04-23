@@ -27,6 +27,7 @@
     
     self.imagePlayer = [[SGImagePlayer alloc] initWithFrame:CGRectZero];
     self.imagePlayer.delegate = self;
+    self.imagePlayer.imageViewsContentMode = UIViewContentModeScaleAspectFit;
     
     self.reloadButton = [[UIButton alloc] initWithFrame:CGRectZero];
     [self.reloadButton setTitle:@"Reload" forState:UIControlStateNormal];
@@ -59,12 +60,12 @@
 
 - (NSInteger)numberOfImagesInImagePlayer:(SGImagePlayer *)imagePlayer
 {
-    return 5;
+    return 4;
 }
 
 - (void)imagePlayer:(SGImagePlayer *)imagePlayer imageView:(UIImageView *)imageView atIndex:(NSInteger)index
 {
-    imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"moto_%ld", index+1]];
+    imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"moto_%ld", index + 1]];
 }
 
 - (void)imagePlayerDidFinishLoad:(SGImagePlayer *)imagePlayer currentIndex:(NSInteger)index
@@ -75,6 +76,12 @@
 - (void)imagePlayer:(SGImagePlayer *)imagePlayer didTapAtIndex:(NSInteger)index
 {
     NSLog(@"%s, index : %ld", __func__, index);
+}
+
+- (void)ImagePlayer:(SGImagePlayer *)imagePlayer editPageControlSystem:(UIPageControl *)pageControlSystem
+{
+    pageControlSystem.pageIndicatorTintColor = [UIColor blackColor];
+    pageControlSystem.currentPageIndicatorTintColor = [UIColor sg_colorWithRed:194 green:225 blue:200];
 }
 
 @end

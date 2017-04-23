@@ -47,19 +47,19 @@
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return 10;
+    return 20;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 20;
+    return 16;
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
     if (kind == UICollectionElementKindSectionHeader) {
         UICollectionReusableView * view = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"header" forIndexPath:indexPath];
-        view.backgroundColor = [UIColor cyanColor];
+        view.backgroundColor = [UIColor sg_colorWithRed:231 green:231 blue:231];
         return view;
     }
     return nil;
@@ -68,7 +68,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor yellowColor];
+    cell.backgroundColor = [UIColor colorWithWhite:1 alpha:0.8];
     return cell;
 }
 
@@ -89,7 +89,17 @@
 
 - (UIColor *)collectionView:(UICollectionView *)collectionView layout:(SGCollectionViewFlowLayout *)collectionViewLayout backgroundColorForSectionAtIndex:(NSInteger)section
 {
-    return [UIColor sg_randomColor];
+    NSInteger index = arc4random() % 4;
+    switch (index) {
+        case 0:
+            return [UIColor sg_colorWithRed:242 green:167 blue:151];
+        case 1:
+            return [UIColor sg_colorWithRed:187 green:224 blue:234];
+        case 2:
+            return [UIColor sg_colorWithRed:252 green:218 blue:182];
+        default:
+            return [UIColor sg_colorWithRed:194 green:225 blue:200];
+    }
 }
 
 @end

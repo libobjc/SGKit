@@ -53,6 +53,8 @@ typedef NS_ENUM(NSUInteger, SGPageControlPosition) {
 @property (nonatomic, assign) BOOL autoPauseAndResumeWhenMoveToWindow;   // default is YES
 @property (nonatomic, assign) NSTimeInterval animationDuration; // default is 2s
 
+@property (nonatomic, assign) UIViewContentMode imageViewsContentMode;  // default is UIViewContentModeScaleAspectFill.
+
 - (void)resume;
 - (void)pause;
 - (void)reloadData;

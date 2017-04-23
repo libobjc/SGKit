@@ -35,12 +35,14 @@
     self.pageView.delegate = self;
     
     self.pageTitleView = [[SGPageTitleView alloc] initWithFrame:CGRectZero];
+    self.pageTitleView.bottomLineColor = [UIColor sg_colorWithRed:242 green:167 blue:151];
+    self.pageTitleView.bottomBoardColor = [UIColor sg_colorWithRed:242 green:167 blue:151];
     self.pageTitleView.showBottomLine = YES;
     self.pageTitleView.leftMargin = 100;
     self.pageTitleView.rightMargin = 50;
     
     self.headerView = [[UIView alloc] initWithFrame:CGRectZero];
-    self.headerView.backgroundColor = [UIColor yellowColor];
+    self.headerView.backgroundColor = [UIColor sg_colorWithRed:194 green:225 blue:200];
     
     self.swipeView = [[SGSwipeView alloc] initWithFrame:self.view.bounds];
     self.swipeView.delegate = self;
@@ -75,7 +77,7 @@
 
 - (CGFloat)headerViewHeightInSwipeView:(SGSwipeView *)swipeView
 {
-    return 180;
+    return 220;
 }
 
 - (CGFloat)pageTitleViewHeightInSwipeView:(SGSwipeView *)swipeView
@@ -96,9 +98,9 @@
     UIView <SGPageItemDelegate> * view;
     if (index == 0) {
         view = (UIView <SGPageItemDelegate> *)[[UIView alloc] init];
-        UIView * label = [[UIView alloc] initWithFrame:CGRectMake(10, 50, 200, 80)];
-        label.backgroundColor = [UIColor cyanColor];
-        view.backgroundColor = [UIColor redColor];
+        UIView * label = [[UIView alloc] initWithFrame:CGRectMake(10, 50, 200, 120)];
+        label.backgroundColor = [UIColor sg_colorWithRed:187 green:224 blue:234];
+        view.backgroundColor = [UIColor sg_colorWithRed:252 green:218 blue:182];
         [view addSubview:label];
         return view;
     } else if (index == 1) {
@@ -123,9 +125,9 @@
 {
     SGPageTitleLabelItem * item = [[SGPageTitleLabelItem alloc] initWithFrame:CGRectZero];
     item.text = [NSString stringWithFormat:@"%ld", index];
-    item.selectedColor = [UIColor redColor];
+    item.selectedColor = [UIColor sg_colorWithRed:242 green:167 blue:151];
     item.selectedFont = [UIFont systemFontOfSize:16];
-    item.itemWidth = arc4random()%100 + 50;
+    item.itemWidth = 100;
     return item;
 }
 
